@@ -1,0 +1,14 @@
+
+{
+    "title":"NeuroSculpt: Forecasting Brain Structure 9 Years Ahead Using Structural MRI",
+    "description": "This master thesis focuses on predicting structural brain changes over nine years in a healthy adult population using 3D T1-weighted MR images. Early detection of brain changes is crucial for preventing neurodegenerative diseases like dementia and Parkinson’s. The thesis explores two methods: Deformation Fields (DFs) and deep learning techniques based on Generative Adversarial Networks (GANs). Results showed that DF-based techniques were more effective and stable, capturing subtle changes in the thalamus and cortex, as well as significant changes in the ventricles. In contrast, GANs primarily predicted volumetric changes in the ventricles. This research provides a foundation for future studies, emphasizing the potential of DF-based approaches and suggesting improvements for GAN methods.",
+    "date": "June 2024",
+    "location": "NTNU, Trondheim, Norway",
+    "buttons": [
+        {
+            "title": "Report",
+            "link": "link"
+        }
+        ]
+}
+

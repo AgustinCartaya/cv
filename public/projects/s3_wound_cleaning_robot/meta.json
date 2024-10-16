@@ -1,0 +1,14 @@
+
+{
+    "title":"WoundCareBot",
+    "description": "The goal of this project is to develop ‘WoundCareBot’, a robotic system designed to automate precise wound cleaning. Using a Universal Robot with 6 degrees of freedom, the system performs four key movements based on wound type: linear, circular, circular-push, and circular-exterior. These motions are tailored to different wound cleaning needs, such as surgical wounds, burn wounds, and diabetic foot ulcers, ensuring proper force is applied to reduce infection risk and promote healing. WoundCareBot aims to enhance efficiency and precision in wound care, improving patient outcomes in medical settings.",
+    "date": "January 2024",
+    "location": "UdG, Girona, Spain",
+    "buttons": [
+        {
+            "title": "Report",
+            "link": "link"
+        }
+        ]
+}
+

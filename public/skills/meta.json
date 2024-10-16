@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Programming",
+    "skills": [
+      "Python",
+      "Java",
+      "C++",
+      "MATLAB",
+      "R",
+      "TensoFlow",
+      "Pytorch",
+      "Windows",
+      "Linux",
+      "OpenGL",
+      "Blender",
+      "Unity",
+      "SQL",
+      "Oracle"
+    ]
+  },
+
+  {
+    "title": "Soft Skills",
+    "skills": ["Autonomy", "Perseverance", "Teamwork", "Problem-solving", "Adaptability"]
+  }
+]

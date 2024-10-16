@@ -1,0 +1,14 @@
+
+{
+    "title":"Funny way to understand U-Net architecture",
+    "description": "This project proposes an engaging, interactive approach to teach about U-Net's components through a detective-themed game. Participants investigate the causes of poor segmentation results for Dr. Luna, a data scientist, exploring the U-Net architecture to identify key components. This hands-on experience enhances understanding while emphasizing the real-world importance of improving segmentation in medical imaging. This report outlines the steps taken to develop the project and gather participant feedback.",
+    "date": "December 2023",
+    "location": "UdG, Girona, Spain",
+    "buttons": [
+        {
+            "title": "Report",
+            "link": "link"
+        }
+        ]
+}
+
