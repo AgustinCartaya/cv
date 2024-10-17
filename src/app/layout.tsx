@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="p-12">
+        <div className="smd:p-12">
           <Header />
           <main className="mx-6 py-4 bg-[#EEEEEE] rounded-b-lg">
             <Navbar />

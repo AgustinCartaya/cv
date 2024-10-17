@@ -15,7 +15,7 @@ const Menu = () => {
 
   return (
     <nav className="bg-teal rounded-md mx-6 shadow-lg">
-      <ul className="grid grid-cols-5 m-0 p-0">
+      <ul className="flex flex-col lg:grid lg:grid-cols-5 m-0 p-0">
         {menuItems.map(item => (
           <li key={item.href}>
             <Link

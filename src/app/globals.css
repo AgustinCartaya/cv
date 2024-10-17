@@ -7,3 +7,15 @@ body {
   background-color: #fff;
   padding: 0 10%;
 }
+
+@media (max-width: 700px) {
+  body {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 0;
+  }
+}

@@ -8,7 +8,7 @@ const Home = () => {
     <div className="flex justify-center h-full">
       <main className="flex gap-6 rounded-lg bg-green-400">
         <div className="flex-1">
-          <div className="grid grid-cols-2 gap-4 p-6">
+          <div className="grid lg:grid-cols-2 gap-4 p-6">
             {projects.map(cardData => {
               return <Card key={uuidv4()} {...cardData} />
             })}

@@ -23,7 +23,7 @@ const Page = () => {
       <div className="flex justify-center h-full">
         <main className="flex gap-6 rounded-lg bg-green-400">
           <div className="flex-1">
-            <div className="grid grid-cols-2 gap-4 p-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:p-4">
               {posters.map(cardData => {
                 return <Card key={uuidv4()}{...cardData} />
               })}
@@ -47,7 +47,7 @@ interface Conferences {
 const ConferencesCard = ({ title, date, location, role }: Conferences) => {
   return (
     <div className="grid gap-2 p-4">
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-lg font-bold">{title}</p>
         <div className="flex gap-2">
           <Calender /> <p className="text-winter">{date}</p>
