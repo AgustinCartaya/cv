@@ -46,7 +46,7 @@ const Card = ({ title, association, date, location, description }: AcademicBackg
   return (
     <div className="grid gap-2 p-4">
       <p className="text-lg font-bold">{title}</p>
-      <div className="flex justify-between">
+      <div className="flex flex-col-reverse gap-2 sm:flex-row justify-between">
         <p className="text-teal font-bold">{association}</p>
         <div className="flex gap-2">
           <Calender /> <p className="text-winter">{date}</p>
