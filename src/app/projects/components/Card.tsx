@@ -21,7 +21,7 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
   }
 
   return (
-    <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-8 w-42">
+    <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42">
       <ImageSlider images={images} settings={settings} />
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
@@ -42,7 +42,7 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
         />
       </div>
 
-      <div className="flex space-x-4 mt-2">
+      <div className="flex flex-wrap gap-2 mt-2">
         {files.length > 0 &&
           files.map(({ title, source }: { title: string; source: string }) => {
             return (
