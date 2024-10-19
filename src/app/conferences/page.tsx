@@ -12,7 +12,7 @@ const Page = () => {
     <div className="p-6 h-full">
       <p className="text-2xl">Conferences</p>
       <hr className="mt-2 mb-4" />
-      <div className="grid gap-4 my-6">
+      <div className="grid my-6">
         {conferences.map((data: Conferences) => {
           return <ConferencesCard key={uuidv4()} {...data} />
         })}
@@ -42,11 +42,10 @@ interface Conferences {
   date: string
   location: string
   role: string
-  link: string
 }
 const ConferencesCard = ({ title, date, location, role }: Conferences) => {
   return (
-    <div className="grid gap-2 p-4">
+    <div className="grid gap-2 p-2">
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-lg font-bold">{title}</p>
         <div className="flex gap-2">
