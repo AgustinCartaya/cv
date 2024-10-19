@@ -25,12 +25,12 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
       <ImageSlider images={images} settings={settings} />
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
-        <div className="flex justify-between">
-          <p>
+        <div className="flex justify-between flex-wrap lg:flex-nowrap gap-x-4 gap-y-2">
+          <p className='flex gap-2'>
             <Location />
             {location}
           </p>
-          <p>
+          <p className='flex gap-2'>
             <Calender />
             {date}
           </p>

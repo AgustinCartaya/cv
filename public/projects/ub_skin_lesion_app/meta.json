@@ -2,13 +2,7 @@
 {
     "title":"Skin lesion application – FORTHEM project",
     "description": "Development of a software application to assist in the analysis of dermatological lesions by integrating multimodal imaging and AI-driven diagnostics. The tool organizes and tracks images from various modalities, such as dermoscopy, reflective confocal microscopy, and photography, providing a comprehensive view of skin lesions. It supports multiple AI systems, utilizing both patient data and lesion characteristics to enhance diagnostic accuracy. Key features include the ability to add new image types, filter patients by lesion data, and visualize lesion progression over time. This software supports dermatologists in managing images and improving diagnostics, particularly in the early detection of skin cancer.",
-    "date": "Summer 2023",
-    "location": "ImViA, Dijon France",
-    "buttons": [
-        {
-            "title": "Report",
-            "link": "link"
-        }
-        ]
+    "date": "2022-07-01",
+    "location": "ImViA, Dijon France"
 }
 

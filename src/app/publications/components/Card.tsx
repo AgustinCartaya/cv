@@ -22,7 +22,7 @@ const Card = ({ title, date, description, link }: Publications) => {
             {isOpen ? <ChevronDoubleDown /> : <ChevronDoubleUp />}
           </span>
         </div>
-        <div className="flex gap-2 my-2">
+        <div className="flex items-center gap-2 my-2">
           <Calender /> <p className="text-winter">{date}</p>
         </div>
       </summary>
