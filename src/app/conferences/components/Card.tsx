@@ -13,14 +13,12 @@ const Card = ({ title, description, images, date, location, files }: MetaData) =
       <Image width={60} height={50} className="w-full h-60 object-cover" src={images[0]} alt={images[0]} />
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
-        <div className="flex justify-between">
-          <p>
-            <Location />
-            {location}
+        <div className="flex flex-col gap-2 justify-between">
+          <p className="flex flex-wrap gap-2 lg:flex-nowrap">
+            <Location /> {location}
           </p>
-          <p>
-            <Calender />
-            {date}
+          <p className="flex flex-wrap gap-2 lg:flex-nowrap">
+            <Calender /> {date}
           </p>
         </div>
         <hr />

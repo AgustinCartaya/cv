@@ -4,7 +4,7 @@ import awards from '../../../public/awards/meta.json'
 
 const Page = () => {
   return (
-    <ul className="p-6 grid gap-2">
+    <ul className="list-disc p-6 ml-4 grid gap-2">
       {awards.map(award => {
         return (
           <li key={uuidv4()} className="text-lg">
