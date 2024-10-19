@@ -2,7 +2,8 @@
   {
     "title": "Master’s Degree in Medical Imaging and Applications",
     "association": "MAIA Erasmus Mundus Joint Master Degree",
-    "date": "2022 - 2024",
+    "startDate":"2022-07-06",
+    "endDate":"2024-06-27",
     "location": "uB – France; UdG – Spain; UNICAS – Italy; NTNU -  Norway",
     "description": "Specialized in medical image analysis and CAD systems using advanced machine learning and deep learning algorithms."
   },
@@ -10,7 +11,8 @@
   {
     "title": "Bachelor’s Degree in Computer Science",
     "association": "University of Burgundy",
-    "date": "2019 – 2022",
+    "startDate":"2019-07-12",
+    "endDate":"2022-06-01",
     "location": "Dijon, France",
     "description": "Specialized in image processing and image synthesis."
   },
@@ -18,7 +20,8 @@
   {
     "title": "Electronic Engineering (5 semesters)",
     "association": "UNEXPO",
-    "date": "2017 – 2019",
+    "startDate":"2017-11-01",
+    "endDate":"2019-09-01",
     "location": "Guayana, Venezuela",
     "description": ""
   }

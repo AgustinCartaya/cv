@@ -2,13 +2,7 @@
 {
     "title":"Brain Tumour Detection Using Dempster Shafer Combination",
     "description": "This project focuses on brain tumor segmentation from MRI images. The proposed method integrates data from multiple MRI modalities—T1, T2, FLAIR, and ADC—using the Dempster-Shafer theory to achieve 3D tumor segmentation. In this approach, each modality generates 3D maps where each voxel is assigned a probability between 0 and 1, indicating the likelihood of being part of a tumor. These probabilities are then combined using Dempster’s rule, resulting in a final image with improved certainty about tumor presence. The method was applied to 3D images from glioma patients in the UCSF-PDGM database.",
-    "date": "Summer 2023",
-    "location": "ImViA, Dijon France",
-    "buttons": [
-        {
-            "title": "Report",
-            "link": "link"
-        }
-        ]
+    "date": "2023-09-01",
+    "location": "ImViA, Dijon France"
 }
 

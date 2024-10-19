@@ -2,13 +2,7 @@
 {
     "title":"Dermoscopic diagnosis using image analysis techniques",
     "description": "This project aims to develop a computer-aided diagnosis algorithm for skin lesions in dermoscopic images using image analysis techniques. It involves binary classification to distinguish between benign lesions and melanomas, as well as multi-class classification for melanoma, basal cell carcinoma, and squamous cell carcinoma. The algorithm generates probabilistic masks obtained from Gaussian Mixture Models and refines these masks using watershed segmentation to enhance lesion delineation. Various types of features (texture, color, shape) are extracted from different image regions, and five weak SVM classifiers are trained on these features. In the multi-class approach, minority class scores are weighted to address class imbalance, and the classifiers’ outputs are combined using the Dempster-Shafer method, which integrates the scores into mass values. This approach improves diagnostic accuracy by effectively aggregating the strengths of individual classifiers, facilitating reliable lesion detection and classification.",
-    "date": "December 2023",
-    "location": "UdG, Girona, Spain",
-    "buttons": [
-        {
-            "title": "Report",
-            "link": "link"
-        }
-        ]
+    "date": "2023-12-01",
+    "location": "UdG, Girona, Spain"
 }
 
