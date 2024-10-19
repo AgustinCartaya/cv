@@ -17,7 +17,7 @@ const Home = () => {
       </p>
       <p className="text-2xl mt-4">Academic Background</p>
       <hr className="mt-2 mb-4" />
-      <div className="grid gap-4 my-6">
+      <div className="grid my-6">
         {academic_background.map((data: AcademicBackground) => {
           return <Card key={uuidv4()} {...data} />
         })}
@@ -38,18 +38,33 @@ export default Home
 interface AcademicBackground {
   title: string
   association: string
-  date: string
+  startDate: string
+  endDate: string
   location: string
   description: string
 }
-const Card = ({ title, association, date, location, description }: AcademicBackground) => {
+const Card = ({ title, association, startDate, endDate, location, description }: AcademicBackground) => {
   return (
     <div className="grid gap-2 p-4">
       <p className="text-lg font-bold">{title}</p>
       <div className="flex flex-col gap-2 sm:flex-row justify-between">
         <p className="text-teal font-bold">{association}</p>
-        <div className="flex gap-2">
-          <Calender /> <p className="text-winter">{date}</p>
+        <div className="grid sm:flex sm:flex-nowrap gap-2">
+          {startDate === endDate ? (
+            <div className="flex gap-2 text-winter">
+              <Calender /> <p>{startDate}</p>
+            </div>
+          ) : (
+            <>
+              <div className="flex gap-2 text-winter">
+                <Calender /> <p>Start: {startDate}</p>
+              </div>
+              <span className="hidden sm:block"> - </span>
+              <div className="flex gap-2 text-winter">
+                <Calender /> <p>End: {endDate}</p>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="flex gap-2">
