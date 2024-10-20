@@ -9,6 +9,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
 import { MetaData } from '@/app/utils/read-meta'
 import { Calender, Location } from '../../../components/Icons'
+import { formatMonthYear } from '@/app/utils/dateFormatter'
 
 const Card = ({ title, description, images, date, location, code, files }: MetaData) => {
   const settings = {
@@ -32,7 +33,7 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
           </p>
           <p className='flex gap-2'>
             <Calender />
-            {date}
+            {formatMonthYear(date)}
           </p>
         </div>
         <hr />

@@ -2,6 +2,7 @@ import { v4 as uuidv4 } from 'uuid'
 import { Calender, Location } from '@/components/Icons'
 import academic_background from '../../public/academic_background/meta.json'
 import skill_categories from '../../public/skills/meta.json'
+import { formatDate, formatDateRange } from './utils/dateFormatter'
 
 const Home = () => {
   return (
@@ -52,18 +53,12 @@ const Card = ({ title, association, startDate, endDate, location, description }:
         <div className="grid sm:flex sm:flex-nowrap gap-2">
           {startDate === endDate ? (
             <div className="flex gap-2 text-winter">
-              <Calender /> <p>{startDate}</p>
+              <Calender /> <p>{formatDate(startDate)}</p>
             </div>
           ) : (
-            <>
-              <div className="flex gap-2 text-winter">
-                <Calender /> <p>Start: {startDate}</p>
-              </div>
-              <span className="hidden sm:block"> - </span>
-              <div className="flex gap-2 text-winter">
-                <Calender /> <p>End: {endDate}</p>
-              </div>
-            </>
+            <div className="flex gap-2 text-winter">
+              <Calender /> <p>{formatDateRange(startDate, endDate)}</p>
+            </div>
           )}
         </div>
       </div>

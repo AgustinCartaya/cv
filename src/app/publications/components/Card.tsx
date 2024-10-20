@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Calender, ChevronDoubleDown, ChevronDoubleUp } from '@/components/Icons'
+import { formatMonthYear } from '@/app/utils/dateFormatter'
 
 interface Publications {
   [key: string]: any
@@ -23,12 +24,12 @@ const Card = ({ title, date, description, link }: Publications) => {
           </span>
         </div>
         <div className="flex items-center gap-2 my-2">
-          <Calender /> <p className="text-winter">{date}</p>
+          <Calender /> <p className="text-winter">{formatMonthYear(date)}</p>
         </div>
       </summary>
       <p>
         <a href={link} target="_blank" rel="noopener noreferrer" className="text-teal font-bold">
-          Link to download ...
+          Link to download
         </a>
       </p>
       <div className="grid gap-2 mt-2">

@@ -1,6 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
 import awards from '../../../public/awards/meta.json'
+import { formatYear } from '../utils/dateFormatter'
 
 const Page = () => {
   return (
@@ -8,7 +9,7 @@ const Page = () => {
       {awards.map(award => {
         return (
           <li key={uuidv4()} className="text-lg">
-            {award.date} - {award.title}
+            {formatYear(award.date)} - {award.title}
           </li>
         )
       })}
