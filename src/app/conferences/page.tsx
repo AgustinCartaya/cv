@@ -4,9 +4,14 @@ import React from 'react'
 import conferences from '../../../public/conferences/conferences/meta.json'
 import { readMeta } from '../utils/read-meta'
 import Card from './components/Card'
+import { formatDateWithOrdinal } from '../utils/dateFormatter'
 
 const Page = () => {
-  const posters = readMeta('/public/conferences/posters')
+  const posters = readMeta('/public/conferences/posters').sort((a, b) => {
+    const dateA = new Date(a.date || '1970-01-01')
+    const dateB = new Date(b.date || '1970-01-01')
+    return dateB.getTime() - dateA.getTime()
+  })
 
   return (
     <div className="p-6 h-full">
@@ -44,27 +49,15 @@ interface Conferences {
   location: string
   role: string
 }
-const ConferencesCard = ({ title, startDate, endDate, location, role }: Conferences) => {
+const ConferencesCard = ({ title, startDate, location, role }: Conferences) => {
   return (
     <div className="grid gap-2 p-2">
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-lg font-bold">{title}</p>
         <div className="grid sm:flex sm:flex-nowrap gap-2">
-          {startDate === endDate ? (
-            <div className="flex gap-2 text-winter">
-              <Calender /> <p>{startDate}</p>
-            </div>
-          ) : (
-            <>
-              <div className="flex gap-2 text-winter">
-                <Calender /> <p>Start: {startDate}</p>
-              </div>
-              <span className="hidden sm:block"> - </span>
-              <div className="flex gap-2 text-winter">
-                <Calender /> <p>End: {endDate}</p>
-              </div>
-            </>
-          )}
+          <div className="flex gap-2 text-winter">
+            <Calender /> <p>{formatDateWithOrdinal(startDate)}</p>
+          </div>
         </div>
       </div>
       <div className="flex gap-2">
