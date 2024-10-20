@@ -7,7 +7,7 @@ const Page = () => {
   const publications = readMeta('/public/publications')
   return (
     <div className="p-6 h-full">
-      <div className="grid gap-4 my-6">
+      <div className="grid gap-4">
         {publications.map(data => {
           return <Card key={uuidv4()} {...data} />
         })}
