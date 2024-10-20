@@ -9,6 +9,7 @@ const config: Config = {
   theme: {
     colors: {
       teal: '#76ABAE',
+      gold: '#c89703',
       dark_teal: '#5e8e91',
       black: '#222831',
       winter: '#31363F',
@@ -22,6 +23,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('daisyui')],
 }
 export default config
