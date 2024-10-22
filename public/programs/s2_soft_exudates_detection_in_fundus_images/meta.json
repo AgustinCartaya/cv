@@ -1,0 +1,7 @@
+
+{
+    "url": "soft-exudates-detection",
+    "title":"Soft Exudates Detection In Retinal Fundus Images",
+    "description": "This application is designed to detect soft exudates in retinal fundus images using image processing algorithms combined with machine learning. Upload your fundus image to detect soft exudates. <strong>Attention! This application is not validated for medical use and was created solely for academic purposes.</strong>"
+}
+
