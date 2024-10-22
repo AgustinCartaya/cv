@@ -24,7 +24,7 @@ const Page = () => {
               <p className="text-2xl font-bold">{title}</p>
               <p className="text-gray-600" dangerouslySetInnerHTML={{ __html: description }} />
               <div className="flex justify-center h-full">
-                <Link href={`/programs/${url}`} className="bg-teal py-2 px-6 rounded-md text-white uppercase">
+                <Link href={`/programs/${url}`} className="btn bg-teal text-white mt-4 uppercase hover:bg-dark_teal">
                   Launch
                 </Link>
               </div>

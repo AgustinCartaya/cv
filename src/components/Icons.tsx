@@ -71,16 +71,23 @@ export const ChevronDoubleDown = () => {
   )
 }
 
-const RadialProgress = ({ title, percentage, color }: { title?: string; percentage: number; color?: string }) => {
+export const RadialProgress = ({
+  title,
+  percentage,
+  i,
+}: {
+  title?: string
+  percentage: number
+  color?: string
+  i: number // Pass `i` as part of props
+}) => {
   const style = {
     '--value': percentage,
   } as React.CSSProperties
 
   return (
-    <div className={clsx(`radial-progress text-${color}`)} style={style}>
+    <div className={`radial-progress ${i === 0 ? 'text-gold' : 'text-teal'}`} style={style}>
       {title || `${percentage}%`}
     </div>
   )
 }
-
-export default RadialProgress
