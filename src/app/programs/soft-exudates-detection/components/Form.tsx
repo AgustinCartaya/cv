@@ -21,7 +21,7 @@ interface DataType {
   nb_candidates?: number
   nb_suspicious_candidates?: number
   imageDetails?: ImageDetails
-  image_url?: string
+  image_base64?: string
 }
 
 const Form = () => {
@@ -51,14 +51,14 @@ const Form = () => {
     setData({})
 
     if (abortController) {
-      abortController.abort() // Aborta la solicitud fetch
-      setAbortController(null) // Restablecer el controlador
+      abortController.abort()
+      setAbortController(null)
     }
   }
 
   const handleUseTestImage = async () => {
     const testImageURL =
-      'http://cv-agustin-programs.xsbw1369.odns.fr/soft-exudates-detection/sex_detection/data/images/training/IDRiD_13.jpg'
+      'https://raw.githubusercontent.com/AgustinCartaya/cv/refs/heads/refactor/content/public/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_1.jpg'
 
     try {
       const response = await fetch(testImageURL)
@@ -109,26 +109,6 @@ const Form = () => {
     }
   }
 
-  const getImageCharacteristics = (file: File): Promise<{ colorImage: boolean; resolution: string }> => {
-    return new Promise((resolve, reject) => {
-      const img = new Image()
-      const reader = new FileReader()
-
-      reader.onloadend = () => {
-        img.src = reader.result as string
-        img.onload = () => {
-          const resolution = `${img.width} x ${img.height}`
-          const isColorImage = ['image/jpeg', 'image/png', 'image/gif'].includes(file.type)
-          resolve({ colorImage: isColorImage, resolution: resolution })
-        }
-        img.onerror = reject
-      }
-
-      reader.onerror = reject
-      reader.readAsDataURL(file)
-    })
-  }
-
   // Handle form submission
   const onSubmit = async (data: any) => {
     const controller = new AbortController()
@@ -138,7 +118,7 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('http://cv-agustin-programs.xsbw1369.odns.fr/soft-exudates-detection', {
+      const response = await fetch('http://cv-agustin-programs.xsbw1369.odns.fr/api-test', {
         method: 'POST',
         body: formData,
         signal: controller.signal,
@@ -150,17 +130,52 @@ const Form = () => {
 
       const responseData = await response.json()
 
-      // Fetch the image characteristics asynchronously
-      const imageBlob = await fetch(responseData.image_url).then(res => res.blob())
+      if (!responseData.image_base64) {
+        throw new Error('Image data is not available')
+      }
+
+      let base64Data = responseData.image_base64
+      let contentType = 'image/png' // Assuming it's a PNG, you can change it if needed
+
+      if (!base64Data.startsWith('data:image')) {
+        base64Data = `data:${contentType};base64,${base64Data}`
+      }
+
+      const parts = base64Data.split(',')
+      contentType = parts[0].split(':')[1].split(';')[0] // Extract the MIME type (e.g., image/png)
+      const base64String = parts[1] // Get the actual Base64 data
+
+      // Convert Base64 to Blob
+      const base64ToBlob = (base64String: string, contentType = '', sliceSize = 512) => {
+        const byteCharacters = atob(base64String) // Decode Base64
+        const byteArrays = []
+
+        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+          const slice = byteCharacters.slice(offset, offset + sliceSize)
+          const byteNumbers = new Array(slice.length)
+
+          for (let i = 0; i < slice.length; i++) {
+            byteNumbers[i] = slice.charCodeAt(i)
+          }
+
+          const byteArray = new Uint8Array(byteNumbers)
+          byteArrays.push(byteArray)
+        }
+
+        return new Blob(byteArrays, { type: contentType })
+      }
+
+      // Convert the Base64 to Blob
+      const imageBlob = base64ToBlob(base64String, contentType)
+
+      // Create a File from the Blob
       const file = new File([imageBlob], 'result-image.jpg', { type: imageBlob.type })
 
-      const imageDetails = await getImageCharacteristics(file)
-
-      setResultImage(responseData.image_url)
+      setResultImage(`data:image/png;base64,${responseData.image_base64}`)
       setData({
         ...responseData,
-        imageDetails, // Add the image characteristics
       })
+      setErrorMjs('')
     } catch (error) {
       setErrorMjs('Error uploading image')
       console.error('Error uploading image:', error)
@@ -279,7 +294,7 @@ const Form = () => {
             <ul className="list-disc grid ml-6 gap-2">
               <li>Initial candidates identified (white): {data?.nb_candidates}</li>
               <li>Suspicious SEx candidates (blue): {data?.nb_suspicious_candidates}</li>
-              <li>Detected Optical Disk {data?.nb_suspicious_candidates}</li>
+              <li>Detected Optical Disk (black)</li>
             </ul>
           </div>
         </div>
