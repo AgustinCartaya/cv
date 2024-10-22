@@ -11,7 +11,7 @@ import { MetaData } from '@/app/utils/read-meta'
 import { Calender, Location } from '../../../components/Icons'
 import { formatMonthYear } from '@/app/utils/dateFormatter'
 
-const Card = ({ title, description, images, date, location, code, files }: MetaData) => {
+const Card = ({ title, description, images, date, location, code, files, program }: MetaData) => {
   const settings = {
     dots: true,
     slidesToShow: 1,
@@ -27,11 +27,11 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         <div className="flex justify-between flex-wrap lg:flex-nowrap gap-x-4 gap-y-2">
-          <p className='flex gap-2'>
+          <p className="flex gap-2">
             <Location />
             {location}
           </p>
-          <p className='flex gap-2'>
+          <p className="flex gap-2">
             <Calender />
             {formatMonthYear(date)}
           </p>
@@ -67,6 +67,16 @@ const Card = ({ title, description, images, date, location, code, files }: MetaD
             className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
           >
             Code
+          </Link>
+        )}
+        {program && (
+          <Link
+            href={program}
+            rel="noopener noreferrer"
+            key={uuidv4()}
+            className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+          >
+            Try!
           </Link>
         )}
       </div>
