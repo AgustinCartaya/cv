@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import React from 'react'
 
 export const Calender = () => {
@@ -76,7 +77,7 @@ const RadialProgress = ({ title, percentage, color }: { title?: string; percenta
   } as React.CSSProperties
 
   return (
-    <div className={`radial-progress text-${color}`} style={style}>
+    <div className={clsx(`radial-progress text-${color}`)} style={style}>
       {title || `${percentage}%`}
     </div>
   )

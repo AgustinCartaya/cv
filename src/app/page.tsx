@@ -45,16 +45,21 @@ const Home = () => {
               </div>
               <div className="text-white rounded-md bg-dark_white">
                 <span
-                  className={clsx(`text-sm h-full block p-2 rounded-md bg-${color}`)}
-                  style={{ width: `${writingPercentage}%` }}
+                  className={clsx('text-sm h-full block p-2 rounded-md', {
+                    'bg-gold': color === 'gold',
+                    'bg-teal': color === 'teal',
+                    // Add other colors as needed
+                  })}
                 >
                   Writing
                 </span>
               </div>
               <div className="text-white rounded-md bg-dark_white">
                 <span
-                  className={clsx(`text-sm h-full block p-2 rounded-md bg-${color}`)}
-                  style={{ width: `${speakingPercentage}%` }}
+                  className={clsx('text-sm h-full block p-2 rounded-md', {
+                    'bg-gold': color === 'gold',
+                    'bg-teal': color === 'teal',
+                  })}
                 >
                   Speaking
                 </span>

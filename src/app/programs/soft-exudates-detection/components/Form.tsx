@@ -216,7 +216,7 @@ const Form = () => {
               <p className="mb-2 text-sm text-gray-500">
                 <span className="font-semibold">Click to upload</span> or drag and drop
               </p>
-              <p className="text-xs text-gray-500">SVG, PNG, JPG or GIF (MAX. 800x400px)</p>
+              <p className="text-xs text-gray-500">PNG, BMP, JPG (MIN. 1500x1500px)</p>
             </>
           )}
         </div>
@@ -247,7 +247,7 @@ const Form = () => {
               Use test image
             </button>
             <button type="button" onClick={handleResetImage} className="btn bg-winter text-white mt-4 uppercase">
-              X
+              Discard
             </button>
           </div>
         </div>
