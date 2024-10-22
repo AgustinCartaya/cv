@@ -242,11 +242,15 @@ const Form = () => {
               disabled={isSubmitting}
               onClick={handleUseTestImage}
               type="button"
-              className="btn bg-teal text-white mt-4 uppercase"
+              className="btn bg-teal text-white mt-4 uppercase hover:bg-dark_teal"
             >
               Use test image
             </button>
-            <button type="button" onClick={handleResetImage} className="btn bg-winter text-white mt-4 uppercase">
+            <button
+              type="button"
+              onClick={handleResetImage}
+              className="btn bg-error hover:bg-[#b91c1c] text-white mt-4 uppercase"
+            >
               Discard
             </button>
           </div>
@@ -274,7 +278,11 @@ const Form = () => {
         </div>
       </div>
       <div className="flex justify-center">
-        <button type="submit" className="btn bg-teal text-white mt-4 px-6 uppercase" disabled={isSubmitting}>
+        <button
+          type="submit"
+          className="btn bg-teal hover:bg-dark_teal text-white mt-4 px-6 uppercase"
+          disabled={isSubmitting}
+        >
           Send
         </button>
       </div>
