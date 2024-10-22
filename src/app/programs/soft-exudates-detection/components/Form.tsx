@@ -118,7 +118,7 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('http://cv-agustin-programs.xsbw1369.odns.fr/api-test', {
+      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/api-test', {
         method: 'POST',
         body: formData,
         signal: controller.signal,
