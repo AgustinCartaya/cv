@@ -1,8 +1,16 @@
 import { v4 as uuidv4 } from 'uuid'
-import { Calender, Location } from '@/components/Icons'
+import RadialProgress, { Calender, Location } from '@/components/Icons'
 import academic_background from '../../public/academic_background/meta.json'
 import skill_categories from '../../public/skills/meta.json'
 import { formatDate, formatDateRange } from './utils/dateFormatter'
+import clsx from 'clsx'
+
+const languages = [
+  { color: 'gold', language: 'Spanish', level: 'Native', writingPercentage: 100, speakingPercentage: 100 },
+  { color: 'teal', language: 'English', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
+  { color: 'teal', language: 'French', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
+  { color: 'teal', language: 'Italian', level: 'Basic', writingPercentage: 60, speakingPercentage: 80 },
+]
 
 const Home = () => {
   return (
@@ -24,12 +32,41 @@ const Home = () => {
         })}
       </div>
 
+      <p className="text-2xl">Languages</p>
+      <hr className="mt-2 mb-4" />
+      <div className="flex flex-col sm:grid sm:grid-cols-4 gap-4 p-4 my-6">
+        {languages.map(({ color, language, level, writingPercentage, speakingPercentage }) => {
+          const totalPercentage = (writingPercentage + speakingPercentage) / 2
+          return (
+            <div key={uuidv4()} className="flex flex-col gap-2">
+              <p className="font-bold uppercase text-center">{language}</p>
+              <div className="flex justify-center my-2">
+                <RadialProgress title={level} percentage={totalPercentage} color={color} />
+              </div>
+              <div className="text-white rounded-md bg-dark_white">
+                <span
+                  className={clsx(`text-sm h-full block p-2 rounded-md bg-${color}`)}
+                  style={{ width: `${writingPercentage}%` }}
+                >
+                  Writing
+                </span>
+              </div>
+              <div className="text-white rounded-md bg-dark_white">
+                <span
+                  className={clsx(`text-sm h-full block p-2 rounded-md bg-${color}`)}
+                  style={{ width: `${speakingPercentage}%` }}
+                >
+                  Speaking
+                </span>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
       <p className="text-2xl">Skills</p>
       <hr className="mt-2 mb-4" />
-
-      <div className="grid p-4">
-        <SkillsSection />
-      </div>
+      <SkillsSection />
     </div>
   )
 }

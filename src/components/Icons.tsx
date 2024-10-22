@@ -69,3 +69,17 @@ export const ChevronDoubleDown = () => {
     </svg>
   )
 }
+
+const RadialProgress = ({ title, percentage, color }: { title?: string; percentage: number; color?: string }) => {
+  const style = {
+    '--value': percentage,
+  } as React.CSSProperties
+
+  return (
+    <div className={`radial-progress text-${color}`} style={style}>
+      {title || `${percentage}%`}
+    </div>
+  )
+}
+
+export default RadialProgress
