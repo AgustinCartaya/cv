@@ -5,6 +5,7 @@ import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { Spinner } from '@/components/Icons'
+import Link from 'next/link'
 
 // Define Zod schema
 const schema = z.object({
@@ -22,7 +23,7 @@ interface DataType {
   nb_candidates?: number
   nb_suspicious_candidates?: number
   imageDetails?: ImageDetails
-  image_?: string
+  image?: string
   message?: string
 }
 
@@ -42,14 +43,14 @@ const Form = () => {
   const [resultImage, setResultImage] = useState<string>('')
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const [data, setData] = useState<DataType>({})
-  const [errorMsj, setErrorMjs] = useState('')
+  const [errorMsj, setErrorMsj] = useState('')
 
   const handleResetImage = () => {
     setImagePreview(null)
     setResultImage('')
     resetField('image')
     clearErrors('image')
-    setErrorMjs('')
+    setErrorMsj('')
     setData({})
 
     if (abortController) {
@@ -83,7 +84,7 @@ const Form = () => {
       // Set the image in react-hook-form and clear validation errors
       setValue('image', file, { shouldValidate: true })
       clearErrors('image')
-      setErrorMjs('')
+      setErrorMsj('')
 
       // Create an image preview
       const reader = new FileReader()
@@ -105,7 +106,7 @@ const Form = () => {
         setImagePreview(reader.result as string)
         setValue('image', file) // Set file in form state
         clearErrors('image') // Clear errors
-        setErrorMjs('')
+        setErrorMsj('')
       }
       reader.readAsDataURL(file)
     }
@@ -113,6 +114,7 @@ const Form = () => {
 
   // Handle form submission
   const onSubmit = async (data: any) => {
+    setData({})
     const controller = new AbortController()
     setAbortController(controller)
 
@@ -131,20 +133,21 @@ const Form = () => {
       }
 
       const responseData = await response.json()
-      if (!responseData.image_) {
+      if (!responseData.image) {
         throw new Error('Image data is not available')
       }
 
       const { colorImage, resolution } = await isColorImageAndGetResolution(data.image)
 
-      setResultImage(`data:image/png;base64,${responseData.image_}`)
+      setResultImage(`data:image/png;base64,${responseData.image}`)
       setData({
         ...responseData,
         imageDetails: { colorImage, resolution: `${resolution.width}x${resolution.height}` },
       })
-      setErrorMjs('')
+      setErrorMsj('')
     } catch (error) {
-      setErrorMjs('Error uploading image')
+      setResultImage('')
+      setErrorMsj('Error uploading image')
       console.error('Error uploading image:', error)
     }
   }
@@ -158,7 +161,7 @@ const Form = () => {
       } rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100`}
     >
       {imagePreview ? (
-        <img src={imagePreview} alt="Uploaded" className="w-full h-full object-cover border rounded-lg shadow-lg" />
+        <img src={imagePreview} alt="Uploaded" className="w-full h-full object-contain border rounded-lg shadow-lg" />
       ) : (
         <div className="flex flex-col items-center justify-center p-6">
           {errors.image && typeof errors.image.message === 'string' ? (
@@ -201,8 +204,8 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid md:grid-cols-2 gap-8">
-        <div className="flex flex-col">
+      <div className="grid gap-4 sm:flex sm:gap-8">
+        <div className="flex flex-1 flex-col">
           <PreviewImage />
           <div className="flex gap-2 justify-center my-4">
             <button
@@ -222,8 +225,16 @@ const Form = () => {
             </button>
           </div>
         </div>
-
-        <div>
+        <div className="flex items-center justify-center">
+          <button
+            type="submit"
+            className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            disabled={isSubmitting}
+          >
+            Send
+          </button>
+        </div>
+        <div className='flex-1'>
           {isSubmitting ? (
             <div className="flex items-center justify-center w-full h-80 border-2 border-gray-300 border-dashed rounded-lg">
               <Spinner />
@@ -232,27 +243,32 @@ const Form = () => {
             <div
               className={clsx(
                 `flex items-center justify-center w-full h-80 border-2 border-gray-300 rounded-lg ${
-                  isSubmitSuccessful && resultImage ? 'border' : 'border-dashed'
+                  isSubmitSuccessful && resultImage ? 'border bg-white' : 'border-dashed'
                 }`
               )}
             >
               {isSubmitSuccessful && resultImage && (
-                <img src={resultImage} alt="Result" className="w-full h-full object-cover rounded-lg shadow-lg" />
+                <img src={resultImage} alt="Result" className="w-full h-full object-contain rounded-lg shadow-lg" />
               )}
             </div>
           )}
           {errorMsj && <p className="text-lg text-error mt-4 font-semibold">{errorMsj}</p>}
-          {Object.entries(data).length > 0 && isSubmitSuccessful && <p className="text-lg text-green-400 mt-4 font-semibold">{data.message}</p>}
+          {Object.entries(data).length > 0 && isSubmitSuccessful && (
+            <div className="flex flex-col items-center gap-2 my-4">
+              <div className="flex justify-center">
+                <Link
+                  href={resultImage}
+                  target="_blank"
+                  download="soft-exudates-detection.png"
+                  className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  Download Image
+                </Link>
+              </div>
+              <p className="text-lg text-green-400 font-semibold">{data.message}</p>
+            </div>
+          )}
         </div>
-      </div>
-      <div className="flex justify-center">
-        <button
-          type="submit"
-          className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
-          disabled={isSubmitting}
-        >
-          Send
-        </button>
       </div>
       {Object.entries(data).length > 0 && isSubmitSuccessful && (
         <div className="grid grid-cols-2 mt-6">
