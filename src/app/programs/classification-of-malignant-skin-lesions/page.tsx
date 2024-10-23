@@ -27,14 +27,14 @@ const Page = () => {
       </div>
 
       <h1 className="text-2xl font-bold mb-4 text-center">
-      Melanoma Detection in Dermoscopy Images
+        Classification of Malignant Skin Lesions
       </h1>
       <p className="mb-4">
-        This application is designed to differentiate between malignant
-        melanomas and benign skin lesions in dermoscopy images using image
-        processing algorithms combined with machine learning. All the code for
-        this project is available on my GitHub, and a detailed report can be
-        found in the projects section of this website.
+        This application is designed to differentiate between melanomas, Basal
+        Cells and Squamous cell in dermoscopy images using image processing
+        algorithms combined with machine learning. All the code for this project
+        is available on my GitHub, and a detailed report can be found in the
+        projects section of this website.
       </p>
 
       <h2 className="text-xl font-semibold mt-4">How to Use the Application</h2>
@@ -63,8 +63,8 @@ const Page = () => {
       <h2 className="text-xl font-semibold mt-4">Output</h2>
       <ul className="list-disc list-inside mb-4">
         <li>A processed image with the lesion outlined in green.</li>
-        <li>A classification of the lesion as either benign or malignant.</li>
-        <li>A probability score for the classification.</li>
+        <li>A classification of the lesion as melanoma, basal cell or squamous cell.</li>
+        <li>A probability score for the classification of each class.</li>
       </ul>
       {/* <h1 className="text-xl text-center">Example</h1>
       <div className="flex justify-center">
