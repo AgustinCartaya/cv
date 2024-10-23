@@ -22,7 +22,8 @@ interface DataType {
   nb_candidates?: number
   nb_suspicious_candidates?: number
   imageDetails?: ImageDetails
-  image_base64?: string
+  image_?: string
+  message?: string
 }
 
 const Form = () => {
@@ -59,7 +60,7 @@ const Form = () => {
 
   const handleUseTestImage = async () => {
     const testImageURL =
-      'https://raw.githubusercontent.com/AgustinCartaya/cv/refs/heads/refactor/content/public/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_1.jpg'
+      'https://raw.githubusercontent.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images/refs/heads/main/program/data/images/training/IDRiD_13.jpg'
 
     try {
       const response = await fetch(testImageURL)
@@ -119,7 +120,7 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/api-test', {
+      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/soft-exudates-detection', {
         method: 'POST',
         body: formData,
         signal: controller.signal,
@@ -130,51 +131,16 @@ const Form = () => {
       }
 
       const responseData = await response.json()
-
-      if (!responseData.image_base64) {
+      if (!responseData.image_) {
         throw new Error('Image data is not available')
       }
 
-      let base64Data = responseData.image_base64
-      let contentType = 'image/png' // Assuming it's a PNG, you can change it if needed
+      const { colorImage, resolution } = await isColorImageAndGetResolution(data.image)
 
-      if (!base64Data.startsWith('data:image')) {
-        base64Data = `data:${contentType};base64,${base64Data}`
-      }
-
-      const parts = base64Data.split(',')
-      contentType = parts[0].split(':')[1].split(';')[0] // Extract the MIME type (e.g., image/png)
-      const base64String = parts[1] // Get the actual Base64 data
-
-      // Convert Base64 to Blob
-      const base64ToBlob = (base64String: string, contentType = '', sliceSize = 512) => {
-        const byteCharacters = atob(base64String) // Decode Base64
-        const byteArrays = []
-
-        for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
-          const slice = byteCharacters.slice(offset, offset + sliceSize)
-          const byteNumbers = new Array(slice.length)
-
-          for (let i = 0; i < slice.length; i++) {
-            byteNumbers[i] = slice.charCodeAt(i)
-          }
-
-          const byteArray = new Uint8Array(byteNumbers)
-          byteArrays.push(byteArray)
-        }
-
-        return new Blob(byteArrays, { type: contentType })
-      }
-
-      // Convert the Base64 to Blob
-      const imageBlob = base64ToBlob(base64String, contentType)
-
-      // Create a File from the Blob
-      const file = new File([imageBlob], 'result-image.jpg', { type: imageBlob.type })
-
-      setResultImage(`data:image/png;base64,${responseData.image_base64}`)
+      setResultImage(`data:image/png;base64,${responseData.image_}`)
       setData({
         ...responseData,
+        imageDetails: { colorImage, resolution: `${resolution.width}x${resolution.height}` },
       })
       setErrorMjs('')
     } catch (error) {
@@ -250,7 +216,7 @@ const Form = () => {
             <button
               type="button"
               onClick={handleResetImage}
-              className="text-sm bg-error hover:bg-[#b91c1c] text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+              className="text-sm bg-error hover:bg-red-500 text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
             >
               Discard
             </button>
@@ -276,6 +242,7 @@ const Form = () => {
             </div>
           )}
           {errorMsj && <p className="text-lg text-error mt-4 font-semibold">{errorMsj}</p>}
+          {Object.entries(data).length > 0 && isSubmitSuccessful && <p className="text-lg text-green-400 mt-4 font-semibold">{data.message}</p>}
         </div>
       </div>
       <div className="flex justify-center">
@@ -313,3 +280,66 @@ const Form = () => {
 }
 
 export default Form
+
+function isColorImageAndGetResolution(
+  file: File
+): Promise<{ colorImage: boolean; resolution: { width: number; height: number } }> {
+  return new Promise((resolve, reject) => {
+    const img = new Image()
+    const reader = new FileReader()
+
+    reader.onload = event => {
+      img.src = event.target?.result as string
+
+      img.onload = () => {
+        // Crear un canvas para obtener los datos de la imagen
+        const canvas = document.createElement('canvas')
+        const ctx = canvas.getContext('2d')
+
+        if (!ctx) {
+          reject(new Error('No se pudo obtener el contexto del canvas'))
+          return
+        }
+
+        canvas.width = img.width
+        canvas.height = img.height
+        ctx.drawImage(img, 0, 0)
+
+        // Obtener los datos de la imagen
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height)
+        const data = imageData.data
+
+        // Verificar si la imagen es en color
+        let isColor = false
+        for (let i = 0; i < data.length; i += 4) {
+          const r = data[i]
+          const g = data[i + 1]
+          const b = data[i + 2]
+
+          // Si hay algún pixel que no es gris (r==g==b), la imagen es color
+          if (r !== g || g !== b) {
+            isColor = true
+            break
+          }
+        }
+
+        // Retornar el resultado como un objeto
+        resolve({
+          colorImage: isColor,
+          resolution: { width: canvas.width, height: canvas.height },
+        })
+      }
+
+      img.onerror = () => {
+        reject(new Error('Error al cargar la imagen'))
+      }
+    }
+
+    reader.onerror = () => {
+      reject(new Error('Error al leer el archivo'))
+    }
+
+    // Leer el archivo como Data URL
+    reader.readAsDataURL(file)
+  })
+}
