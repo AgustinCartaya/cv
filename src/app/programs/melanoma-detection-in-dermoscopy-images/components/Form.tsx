@@ -20,8 +20,8 @@ interface ImageDetails {
 }
 
 interface DataType {
-  nb_candidates?: number
-  nb_suspicious_candidates?: number
+  prediction?: number
+  probability?: number
   imageDetails?: ImageDetails
   image?: string
   message?: string
@@ -61,7 +61,7 @@ const Form = () => {
 
   const handleUseTestImage = async () => {
     const testImageURL =
-      'https://raw.githubusercontent.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images/refs/heads/main/program/data/images/training/IDRiD_13.jpg'
+      'https://raw.githubusercontent.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml/refs/heads/main/program/images/original/train/malign/mal00002.jpg'
 
     try {
       const response = await fetch(testImageURL)
@@ -122,7 +122,7 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/soft-exudates-detection', {
+      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/binary-skin-lesion-detection-ml', {
         method: 'POST',
         body: formData,
         signal: controller.signal,
@@ -284,9 +284,8 @@ const Form = () => {
           <div className="flex flex-col">
             <p className="font-semibold p-0 mb-2">Results:</p>
             <ul className="list-disc grid ml-6 gap-2">
-              <li>Initial candidates identified (white): {data?.nb_candidates}</li>
-              <li>Suspicious SEx candidates (blue): {data?.nb_suspicious_candidates}</li>
-              <li>Detected Optical Disk (black)</li>
+              <li>Prediction: <strong>{data?.prediction === 1 ? "Melanoma" : "Benign lesion"}</strong></li>
+              <li>Probability: {(Number(data?.probability) * 100).toFixed(2)}%</li>
             </ul>
           </div>
         </div>

@@ -25,18 +25,20 @@ const Page = () => {
           </svg>
         </Link>
       </div>
+
       <div className="p-6 md:p-14 md:pt-2">
         <h1 className="text-2xl font-bold mb-4 text-center">
-          Soft Exudate Detection In Retinal Fundus Images
+          Classification of Malignant Skin Lesions
         </h1>
         <p className="mb-4">
-          This application is designed to detect soft exudates (SEx) in retinal
-          fundus images using image processing algorithms combined with machine
-          learning. All the code for this project is available on my{" "}
+          This application is designed to differentiate between melanomas, Basal
+          Cells and Squamous cell in dermoscopy images using image processing
+          algorithms combined with machine learning. All the code for this
+          project is available on my{" "}
           <Link
             className="underline text-blue-700"
             target="_blank"
-            href="https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git"
+            href="https://github.com/AgustinCartaya/s3-multi-class-skin-lesion-detection-ml.git"
           >
             GitHub
           </Link>
@@ -48,7 +50,7 @@ const Page = () => {
           How to Use the Application
         </h2>
         <ul className="list-decimal list-inside mb-4">
-          <li>Upload your fundus image in the designated area.</li>
+          <li>Upload your dermoscopy image in the designated area.</li>
           <li>
             Click <strong>Send</strong> to run the program.
           </li>
@@ -57,44 +59,44 @@ const Page = () => {
           </li>
         </ul>
         <p>
-          You can also use the provided test image to see how the application
-          works by selecting <strong>Use Test Image</strong>.
+          You can also use the test image available to see how the application
+          works. Simply select <strong>Use Test Image</strong>.
         </p>
 
         <h2 className="text-xl font-semibold mt-4">Image Requirements</h2>
         <ul className="list-disc list-inside mb-4">
           <li>
-            The image must be a fundus image, centered on the eye with a black
-            background.
+            The image must be a dermoscopy image with the lesion centered.
           </li>
-          <li>It should not contain any prior segmentations or annotations.</li>
+          <li>
+            It should not contain any prior segmentations or annotations (ruler
+            marks are allowed).
+          </li>
           <li>The image must be in color.</li>
-          <li>Minimum resolution: 1500 x 1500 pixels.</li>
         </ul>
 
         <h2 className="text-xl font-semibold mt-4">Output</h2>
         <ul className="list-disc list-inside mb-4">
+          <li>A processed image with the lesion outlined in green.</li>
           <li>
-            Initial candidates identified by a basic algorithm, contoured in
-            white.
+            A classification of the lesion as melanoma, basal cell or squamous
+            cell.
           </li>
-          <li>Suspicious SEx candidates contoured in blue.</li>
-          <li>The optical disc contoured in black.</li>
-          <li>Number of candidates identified by a basic algorithm.</li>
-          <li>Number of Suspicious SEx candidates.</li>
+          <li>A probability score for the classification of each class.</li>
         </ul>
-        <h1 className="text-xl text-center">Example</h1>
-        <div className="flex justify-center">
-          <Image
-            width={600}
-            height={100}
-            className="rounded-md lg:rounded-l-lg"
-            src={
-              "/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_2.png"
-            }
-            alt={"sex_detection_program.png"}
-          />
-        </div>
+        {/* <h1 className="text-xl text-center">Example</h1>
+      <div className="flex justify-center">
+        <Image
+          width={600}
+          height={100}
+          className="rounded-md lg:rounded-l-lg"
+          src={
+            "/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_2.png"
+          }
+          alt={"sex_detection_program.png"}
+        />
+      </div> */}
+
         <h2 className="text-lg font-semibold">Important Notice</h2>
         <p>
           <mark>
@@ -109,6 +111,7 @@ const Page = () => {
           <span className="mx-4 text-black text-2xl">Try the program</span>
           <hr className="flex-1 border-gray-400" />
         </div>
+
         <Form />
       </div>
     </div>

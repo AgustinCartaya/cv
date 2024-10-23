@@ -20,8 +20,10 @@ interface ImageDetails {
 }
 
 interface DataType {
-  nb_candidates?: number
-  nb_suspicious_candidates?: number
+  prediction?: number
+  probability_mel?: number
+  probability_bcc?: number
+  probability_scc?: number
   imageDetails?: ImageDetails
   image?: string
   message?: string
@@ -61,7 +63,7 @@ const Form = () => {
 
   const handleUseTestImage = async () => {
     const testImageURL =
-      'https://raw.githubusercontent.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images/refs/heads/main/program/data/images/training/IDRiD_13.jpg'
+      'https://raw.githubusercontent.com/AgustinCartaya/s3-multi-class-skin-lesion-detection-ml/refs/heads/main/program/images/original/train/scc/scc00004.jpg'
 
     try {
       const response = await fetch(testImageURL)
@@ -122,7 +124,7 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/soft-exudates-detection', {
+      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/multi-class-skin-lesion-detection-ml', {
         method: 'POST',
         body: formData,
         signal: controller.signal,
@@ -204,7 +206,7 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid gap-4 lg:flex sm:gap-8">
+      <div className="grid gap-4 sm:flex sm:gap-8">
         <div className="flex flex-1 flex-col">
           <PreviewImage />
           <div className="flex gap-2 justify-center my-4">
@@ -284,9 +286,10 @@ const Form = () => {
           <div className="flex flex-col">
             <p className="font-semibold p-0 mb-2">Results:</p>
             <ul className="list-disc grid ml-6 gap-2">
-              <li>Initial candidates identified (white): {data?.nb_candidates}</li>
-              <li>Suspicious SEx candidates (blue): {data?.nb_suspicious_candidates}</li>
-              <li>Detected Optical Disk (black)</li>
+              <li>Prediction: <strong>{data?.prediction === 0 ? "Melanoma" : (data?.prediction === 1 ? "Basal cell" : "Squamous cell")}</strong></li>
+              <li>Melanoma probability: {(Number(data?.probability_mel) * 100).toFixed(2)}%</li>
+              <li>Basal cell probability: {(Number(data?.probability_bcc) * 100).toFixed(2)}%</li>
+              <li>Squamous cell probability: {(Number(data?.probability_scc) * 100).toFixed(2)}%</li>
             </ul>
           </div>
         </div>
