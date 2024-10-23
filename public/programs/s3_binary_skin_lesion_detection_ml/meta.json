@@ -1,0 +1,7 @@
+
+{
+    "url": "melanoma-detection-in-dermoscopy-images",
+    "title":"Melanoma Detection in Dermoscopy Images",
+    "description": "This application is designed to differentiate between melanomas and benign skin lesions in dermoscopy images using image processing algorithms combined with machine learning. Upload your dermoscopy image to classify the skin lesion as benign or malignant. <strong>Attention! This application is not validated for medical use and was created solely for academic purposes.</strong>"
+}
+

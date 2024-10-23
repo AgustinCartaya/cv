@@ -69,8 +69,8 @@ const Page = () => {
           width={600}
           height={100}
           className="rounded-md lg:rounded-l-lg"
-          src={'/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_3.png'}
-          alt={'sex_detection_program_3.png'}
+          src={'/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_2.png'}
+          alt={'sex_detection_program.png'}
         />
       </div>
       <h2 className="text-lg font-semibold m-6">
