@@ -204,7 +204,7 @@ const Form = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="grid gap-4 sm:flex sm:gap-8">
+      <div className="grid gap-4 lg:flex sm:gap-8">
         <div className="flex flex-1 flex-col">
           <PreviewImage />
           <div className="flex gap-2 justify-center my-4">
