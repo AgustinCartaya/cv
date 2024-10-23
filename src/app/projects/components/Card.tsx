@@ -36,7 +36,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             {formatMonthYear(date)}
           </p>
         </div>
-        <hr />
+        <hr className='border-gray-400'/>
         <p
           className="text-gray-600 text-sm max-h-32 overflow-y-auto"
           dangerouslySetInnerHTML={{ __html: description }}

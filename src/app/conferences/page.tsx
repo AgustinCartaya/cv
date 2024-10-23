@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <div className="p-6 h-full">
       <p className="text-2xl">Conferences</p>
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-2 mb-4 border-black" />
       <div className="grid my-6">
         {conferences.map((data: Conferences) => {
           return <ConferencesCard key={uuidv4()} {...data} />
@@ -24,9 +24,9 @@ const Page = () => {
       </div>
 
       <p className="text-2xl">Posters</p>
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-2 mb-4 border-black" />
       <div className="flex justify-center h-full">
-        <main className="flex gap-6 rounded-lg bg-green-400">
+        <main className="flex gap-6 rounded-lg">
           <div className="flex-1">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 md:p-4">
               {posters.map(cardData => {
@@ -45,7 +45,6 @@ export default Page
 interface Conferences {
   title: string
   startDate: string
-  endDate: string
   location: string
   role: string
 }
@@ -64,7 +63,7 @@ const ConferencesCard = ({ title, startDate, location, role }: Conferences) => {
         <Location /> <p className="text-winter">{location}</p>
       </div>
       <p>Role: {role}</p>
-      <hr className="mt-4" />
+      <hr className="mt-4 border-gray-400" />
     </div>
   )
 }

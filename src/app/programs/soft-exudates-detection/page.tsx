@@ -7,18 +7,21 @@ import Link from 'next/link'
 const Page = () => {
   return (
     <div className="container mx-auto p-6">
-      <Link href="/programs" className="flex" style={{ fontSize: '2xx-large' }}>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          strokeWidth="1.5"
-          stroke="currentColor"
-          className="size-8"
-        >
-          <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
-        </svg>
-      </Link>
+      <div className='mb-4'>
+        <Link href="/programs" className='flex'>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth="1.5"
+            stroke="currentColor"
+            className="size-8"
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" />
+          </svg>
+        </Link>
+      </div>
+
       <h1 className="text-2xl font-bold mb-4 text-center">Soft Exudates Detection In Retinal Fundus Images</h1>
       <p className="mb-4">
         This application is designed to detect soft exudates (SEx) in retinal fundus images using image processing
@@ -76,9 +79,9 @@ const Page = () => {
       </h2>
 
       <div className="flex items-center m-6">
-        <hr className="flex-1 border-gray-300" />
+        <hr className="flex-1 border-gray-400" />
         <span className="mx-4 text-black text-2xl">Try the program</span>
-        <hr className="flex-1 border-gray-300" />
+        <hr className="flex-1 border-gray-400" />
       </div>
       <div className="p-6">
         <Form />
