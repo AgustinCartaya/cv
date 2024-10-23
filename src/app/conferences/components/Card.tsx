@@ -22,7 +22,7 @@ const Card = ({ title, description, images, date, location, files }: MetaData) =
             <Calender /> {formatDateWithOrdinal(date)}
           </p>
         </div>
-        <hr />
+        <hr className='border-gray-400' />
         <p
           className="text-gray-600 text-sm max-h-32 overflow-y-auto"
           dangerouslySetInnerHTML={{ __html: description }}
@@ -34,7 +34,7 @@ const Card = ({ title, description, images, date, location, files }: MetaData) =
           files.map(({ title, source }: { title: string; source: string }) => {
             return (
               <Link
-                href={String(source)}
+                href={source}
                 target="_blank"
                 rel="noopener noreferrer"
                 key={uuidv4()}

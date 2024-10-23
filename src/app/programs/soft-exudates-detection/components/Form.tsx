@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
+import { Spinner } from '@/components/Icons'
 
 // Define Zod schema
 const schema = z.object({
@@ -237,19 +238,19 @@ const Form = () => {
       <div className="grid md:grid-cols-2 gap-8">
         <div className="flex flex-col">
           <PreviewImage />
-          <div className="flex gap-2 justify-center">
+          <div className="flex gap-2 justify-center my-4">
             <button
               disabled={isSubmitting}
               onClick={handleUseTestImage}
               type="button"
-              className="btn bg-teal text-white mt-4 uppercase hover:bg-dark_teal"
+              className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Use test image
             </button>
             <button
               type="button"
               onClick={handleResetImage}
-              className="btn bg-error hover:bg-[#b91c1c] text-white mt-4 uppercase"
+              className="text-sm bg-error hover:bg-[#b91c1c] text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
             >
               Discard
             </button>
@@ -259,7 +260,7 @@ const Form = () => {
         <div>
           {isSubmitting ? (
             <div className="flex items-center justify-center w-full h-80 border-2 border-gray-300 border-dashed rounded-lg">
-              <span className="loading loading-spinner loading-lg text-teal"></span>
+              <Spinner />
             </div>
           ) : (
             <div
@@ -280,7 +281,7 @@ const Form = () => {
       <div className="flex justify-center">
         <button
           type="submit"
-          className="btn bg-teal hover:bg-dark_teal text-white mt-4 px-6 uppercase"
+          className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
           disabled={isSubmitting}
         >
           Send

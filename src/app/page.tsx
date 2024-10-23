@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="p-6 h-full">
       <p className="text-2xl">About Me</p>
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-2 mb-4 p-2 border-black" />
 
       <p>
         I specialize in medical image analysis, developing a wide range of algorithms, including machine learning and
@@ -25,7 +25,7 @@ const Home = () => {
         such as memory and behavior.
       </p>
       <p className="text-2xl mt-4">Academic Background</p>
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-2 mb-4 border-black" />
       <div className="grid my-6">
         {academic_background.map((data: AcademicBackground) => {
           return <Card key={uuidv4()} {...data} />
@@ -33,23 +33,30 @@ const Home = () => {
       </div>
 
       <p className="text-2xl">Languages</p>
-      <hr className="mt-2 mb-4" />
-      <div className="flex flex-col sm:grid sm:grid-cols-4 gap-4 p-4 my-6">
+      <hr className="mt-2 mb-4 border-black" />
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 my-6">
         {languages.map(({ language, level, writingPercentage, speakingPercentage }, i) => {
           const totalPercentage = (writingPercentage + speakingPercentage) / 2
+          const color = i === 0 ? '#c89703' : '#76ABAE'
           return (
             <div key={uuidv4()} className="flex flex-col gap-2">
               <p className="font-bold uppercase text-center">{language}</p>
               <div className="flex justify-center my-2">
-                <RadialProgress title={level} percentage={totalPercentage} i={i} />
+                <RadialProgress percentage={totalPercentage} title={level} color={color} />
               </div>
-              <div className="text-white rounded-md bg-dark_white">
-                <span className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}>
+              <div className="text-white rounded-md bg-[#d3d3d3]">
+                <span
+                  className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
+                  style={{ width: `${writingPercentage}%` }}
+                >
                   Writing
                 </span>
               </div>
-              <div className="text-white rounded-md bg-dark_white">
-                <span className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}>
+              <div className="text-white rounded-md bg-[#d3d3d3]">
+                <span
+                  className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
+                  style={{ width: `${speakingPercentage}%` }}
+                >
                   Speaking
                 </span>
               </div>
@@ -59,7 +66,7 @@ const Home = () => {
       </div>
 
       <p className="text-2xl">Skills</p>
-      <hr className="mt-2 mb-4" />
+      <hr className="mt-2 mb-4 border-black" />
       <SkillsSection />
     </div>
   )
@@ -97,7 +104,7 @@ const Card = ({ title, association, startDate, endDate, location, description }:
         <Location /> <p className="text-winter">{location}</p>
       </div>
       <p>{description}</p>
-      <hr className="mt-4" />
+      <hr className="mt-4 border-gray-400" />
     </div>
   )
 }
