@@ -1,4 +1,5 @@
 import React from 'react'
+import { colors } from '../../tailwind.config'
 
 export const Calender = () => {
   return (
@@ -70,36 +71,6 @@ export const ChevronDoubleDown = () => {
   )
 }
 
-interface RadialProgressProps {
-  percentage: number
-  title: string
-  color: string
-}
-
-interface RadialProgressProps {
-  percentage: number // Expected to be between 0 and 100
-  title: string
-  color: string // A valid Tailwind color class or custom color (e.g., "text-blue-500", "#000", "rgb(255, 0, 0)")
-}
-
-export const RadialProgress: React.FC<RadialProgressProps> = ({ percentage, title, color }) => {
-  // Tailwind requires a custom style for background gradients, so inline style for the conic-gradient
-  const circleStyle: React.CSSProperties = {
-    background: `conic-gradient(${color} ${percentage * 3.6}deg, #d3d3d3 0deg)`,
-  }
-
-  return (
-    <div className="flex flex-col items-center">
-      <div className="relative w-24 h-24 rounded-full bg-gray-200 flex justify-center items-center">
-        <div className="absolute w-full h-full rounded-full" style={circleStyle} />
-        <div className="absolute flex justify-center items-center font-semibold text-sm text-white">
-          {title || `${percentage}%`}
-        </div>
-      </div>
-    </div>
-  )
-}
-
 export const Spinner = () => {
   return (
     <div aria-live="polite">
@@ -120,6 +91,63 @@ export const Spinner = () => {
         />
       </svg>
       <span className="sr-only">Loading...</span>
+    </div>
+  )
+}
+
+type ColorKeys = keyof typeof colors
+
+export const CircularProgress = ({
+  percentage,
+  color = 'teal',
+  title,
+}: {
+  percentage: number
+  color?: ColorKeys
+  title: string
+}) => {
+  const strokeWidth = 10
+  const radius = 50 - strokeWidth / 2
+  const circumference = 2 * Math.PI * radius
+  const progress = (percentage / 100) * circumference
+  const strokeColor = colors[color]
+
+  return (
+    <div className="flex items-center justify-center h-28 w-28">
+      <svg className="transform -rotate-90 w-full h-full" viewBox="0 0 100 100">
+        {/* Fondo del círculo */}
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          strokeWidth={strokeWidth}
+          className="text-gray-300"
+          stroke="currentColor"
+          fill="transparent"
+        />
+        <circle
+          cx="50"
+          cy="50"
+          r={radius}
+          strokeWidth={strokeWidth}
+          stroke={strokeColor}
+          fill="transparent"
+          strokeDasharray={circumference}
+          strokeDashoffset={circumference - progress}
+          strokeLinecap="round"
+        />
+        <text
+          x="50%"
+          y="50%"
+          dominantBaseline="middle"
+          textAnchor="middle"
+          fill={strokeColor} // Usar el color correcto
+          className="text-sm font-bold"
+          transform="rotate(-270 50 50)"
+        >
+          {title}
+        </text>
+      </svg>
     </div>
   )
 }
