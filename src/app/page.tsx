@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from 'uuid'
-import { Calender, Location, RadialProgress } from '@/components/Icons'
+import { Calender, CircularProgress, Location } from '@/components/Icons'
 import academic_background from '../../public/academic_background/meta.json'
 import skill_categories from '../../public/skills/meta.json'
 import { formatDate, formatDateRange } from './utils/dateFormatter'
@@ -34,17 +34,17 @@ const Home = () => {
 
       <p className="text-2xl">Languages</p>
       <hr className="mt-2 mb-4 border-black" />
-      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4 p-4 my-6">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 my-6">
         {languages.map(({ language, level, writingPercentage, speakingPercentage }, i) => {
           const totalPercentage = (writingPercentage + speakingPercentage) / 2
-          const color = i === 0 ? '#c89703' : '#76ABAE'
+          const color = i === 0 ? 'gold' : 'teal'
           return (
             <div key={uuidv4()} className="flex flex-col gap-2">
               <p className="font-bold uppercase text-center">{language}</p>
               <div className="flex justify-center my-2">
-                <RadialProgress percentage={totalPercentage} title={level} color={color} />
+                <CircularProgress percentage={totalPercentage} color={color} title={level} />
               </div>
-              <div className="text-white rounded-md bg-[#d3d3d3]">
+              <div className="text-white rounded-md bg-gray-300">
                 <span
                   className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
                   style={{ width: `${writingPercentage}%` }}
@@ -52,7 +52,7 @@ const Home = () => {
                   Writing
                 </span>
               </div>
-              <div className="text-white rounded-md bg-[#d3d3d3]">
+              <div className="text-white rounded-md bg-gray-300">
                 <span
                   className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
                   style={{ width: `${speakingPercentage}%` }}
