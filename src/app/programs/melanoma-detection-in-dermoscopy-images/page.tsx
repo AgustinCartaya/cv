@@ -50,7 +50,7 @@ const Page = () => {
         </h2>
         <ul className="list-decimal list-inside mb-4">
           <li>Upload your dermoscopy image in the designated area.</li>
-          <li>Click "Send" to run the program.</li>
+          <li>Click <strong>Send</strong> to run the program.</li>
           <li>
             Wait for the result image (the analysis may take a few minutes).
           </li>

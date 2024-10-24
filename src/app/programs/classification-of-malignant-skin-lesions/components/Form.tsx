@@ -124,11 +124,14 @@ const Form = () => {
     formData.append('image', data.image)
 
     try {
-      const response = await fetch('https://cv-agustin-programs.patrice-danse.com/multi-class-skin-lesion-detection-ml', {
-        method: 'POST',
-        body: formData,
-        signal: controller.signal,
-      })
+      const response = await fetch(
+        'https://cv-agustin-programs.patrice-danse.com/multi-class-skin-lesion-detection-ml',
+        {
+          method: 'POST',
+          body: formData,
+          signal: controller.signal,
+        }
+      )
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`)
@@ -160,7 +163,7 @@ const Form = () => {
       htmlFor="dropzone-file"
       className={`flex flex-col items-center justify-center w-full h-80 border-2 border-gray-300 ${
         imagePreview ? 'border' : 'border-dashed'
-      } rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100`}
+      } rounded-lg bg-gray-50 ${isSubmitting ? 'cursor-not-allowed' : 'cursor-pointer'}`}
     >
       {imagePreview ? (
         <img src={imagePreview} alt="Uploaded" className="w-full h-full object-contain border rounded-lg shadow-lg" />
@@ -200,6 +203,7 @@ const Form = () => {
         accept="image/*"
         {...register('image')}
         onChange={handleImageChange}
+        disabled={isSubmitting}
       />
     </label>
   )
@@ -221,7 +225,7 @@ const Form = () => {
             <button
               type="button"
               onClick={handleResetImage}
-              className="text-sm bg-error hover:bg-red-500 text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+              className="text-sm bg-error hover:bg-red-700 text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
             >
               Discard
             </button>
@@ -236,7 +240,7 @@ const Form = () => {
             Send
           </button>
         </div>
-        <div className='flex-1'>
+        <div className="flex-1">
           {isSubmitting ? (
             <div className="flex items-center justify-center w-full h-80 border-2 border-gray-300 border-dashed rounded-lg">
               <Spinner />
@@ -286,7 +290,12 @@ const Form = () => {
           <div className="flex flex-col">
             <p className="font-semibold p-0 mb-2">Results:</p>
             <ul className="list-disc grid ml-6 gap-2">
-              <li>Prediction: <strong>{data?.prediction === 0 ? "Melanoma" : (data?.prediction === 1 ? "Basal cell" : "Squamous cell")}</strong></li>
+              <li>
+                Prediction:{' '}
+                <strong>
+                  {data?.prediction === 0 ? 'Melanoma' : data?.prediction === 1 ? 'Basal cell' : 'Squamous cell'}
+                </strong>
+              </li>
               <li>Melanoma probability: {(Number(data?.probability_mel) * 100).toFixed(2)}%</li>
               <li>Basal cell probability: {(Number(data?.probability_bcc) * 100).toFixed(2)}%</li>
               <li>Squamous cell probability: {(Number(data?.probability_scc) * 100).toFixed(2)}%</li>
