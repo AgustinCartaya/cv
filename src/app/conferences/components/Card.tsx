@@ -10,7 +10,7 @@ import { formatDateWithOrdinal } from '@/app/utils/dateFormatter'
 
 const Card = ({ title, description, images, date, location, files }: MetaData) => {
   return (
-    <div className="flex flex-col gap-2 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42">
+    <div className="flex flex-col gap-2 justify-between text-black bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42">
       <Image width={60} height={50} className="w-full h-60 object-cover" src={images[0]} alt={images[0]} />
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
@@ -38,7 +38,7 @@ const Card = ({ title, description, images, date, location, files }: MetaData) =
                 target="_blank"
                 rel="noopener noreferrer"
                 key={uuidv4()}
-                className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+                className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
               >
                 {title}
               </Link>

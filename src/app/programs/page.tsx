@@ -7,10 +7,10 @@ import Image from 'next/image'
 const Page = () => {
   const programs = readMeta('/public/programs')
   return (
-    <div className="grid gap-4 p-6">
+    <div className="grid gap-4 p-6 text-black">
       {programs.map(({ title, description, images, url }) => {
         return (
-          <div key={uuidv4()} className="flex flex-col p-6 lg:flex-row gap-4 bg-white rounded-md">
+          <div key={uuidv4()} className="flex flex-col p-6 lg:flex-row gap-4 shadow-md bg-white rounded-md">
             <div className="flex justify-center">
               <img
                 className="w-60 h-55 object-cover rounded-md lg:rounded-l-lg"
@@ -24,7 +24,7 @@ const Page = () => {
               <div className="flex justify-center">
                 <Link
                   href={`/programs/${url}`}
-                  className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+                  className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
                 >
                   Launch
                 </Link>

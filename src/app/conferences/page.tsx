@@ -16,7 +16,7 @@ const Page = () => {
   return (
     <div className="p-6 h-full">
       <p className="text-2xl">Conferences</p>
-      <hr className="mt-2 mb-4 border-black" />
+      <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="grid my-6">
         {conferences.map((data: Conferences) => {
           return <ConferencesCard key={uuidv4()} {...data} />
@@ -24,7 +24,7 @@ const Page = () => {
       </div>
 
       <p className="text-2xl">Posters</p>
-      <hr className="mt-2 mb-4 border-black" />
+      <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="flex justify-center h-full">
         <main className="flex gap-6 rounded-lg">
           <div className="flex-1">
@@ -50,17 +50,17 @@ interface Conferences {
 }
 const ConferencesCard = ({ title, startDate, location, role }: Conferences) => {
   return (
-    <div className="grid gap-2 p-2">
+    <div className="grid gap-2 p-2 text-winter dark:text-white">
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-lg font-bold">{title}</p>
         <div className="grid sm:flex sm:flex-nowrap gap-2">
-          <div className="flex gap-2 text-winter">
+          <div className="flex gap-2">
             <Calender /> <p>{formatDateWithOrdinal(startDate)}</p>
           </div>
         </div>
       </div>
       <div className="flex gap-2">
-        <Location /> <p className="text-winter">{location}</p>
+        <Location /> <p>{location}</p>
       </div>
       <p>Role: {role}</p>
       <hr className="mt-4 border-gray-400" />
