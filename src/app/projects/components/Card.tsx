@@ -22,7 +22,7 @@ const Card = ({ title, description, images, date, location, code, files, program
   }
 
   return (
-    <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42">
+    <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42 text-black">
       <ImageSlider images={images} settings={settings} />
       <div className="grid gap-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
@@ -52,7 +52,7 @@ const Card = ({ title, description, images, date, location, code, files, program
                 target="_blank"
                 rel="noopener noreferrer"
                 key={uuidv4()}
-                className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+                className="text-sm text-white bg-principal hover:bg-principal_hover dark:bg-dark-principal uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
               >
                 {title}
               </Link>
@@ -64,7 +64,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             target="_blank"
             rel="noopener noreferrer"
             key={uuidv4()}
-            className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+            className="text-sm text-white bg-principal hover:bg-principal_hover dark:bg-dark-principal uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
           >
             Code
           </Link>
@@ -74,7 +74,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             href={program}
             rel="noopener noreferrer"
             key={uuidv4()}
-            className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+            className="text-sm text-white bg-principal hover:bg-principal_hover dark:bg-dark-principal uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
           >
             Try!
           </Link>

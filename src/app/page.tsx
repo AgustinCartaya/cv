@@ -16,7 +16,7 @@ const Home = () => {
   return (
     <div className="p-6 h-full">
       <p className="text-2xl">About Me</p>
-      <hr className="mt-2 mb-4 p-2 border-black" />
+      <hr className="mt-2 mb-4 p-2 border-black dark:border-white" />
 
       <p>
         I specialize in medical image analysis, developing a wide range of algorithms, including machine learning and
@@ -25,7 +25,7 @@ const Home = () => {
         such as memory and behavior.
       </p>
       <p className="text-2xl mt-4">Academic Background</p>
-      <hr className="mt-2 mb-4 border-black" />
+      <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="grid my-6">
         {academic_background.map((data: AcademicBackground) => {
           return <Card key={uuidv4()} {...data} />
@@ -33,11 +33,11 @@ const Home = () => {
       </div>
 
       <p className="text-2xl">Languages</p>
-      <hr className="mt-2 mb-4 border-black" />
+      <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 my-6">
         {languages.map(({ language, level, writingPercentage, speakingPercentage }, i) => {
           const totalPercentage = (writingPercentage + speakingPercentage) / 2
-          const color = i === 0 ? 'gold' : 'teal'
+          const color = i === 0 ? 'accent' : 'principal'
           return (
             <div key={uuidv4()} className="flex flex-col gap-2">
               <p className="font-bold uppercase text-center">{language}</p>
@@ -46,7 +46,11 @@ const Home = () => {
               </div>
               <div className="text-white rounded-md bg-gray-300">
                 <span
-                  className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
+                  className={clsx(
+                    `text-sm h-full block p-2 rounded-md ${
+                      i === 0 ? 'bg-accent' : 'bg-principal dark:bg-dark-principal '
+                    }`
+                  )}
                   style={{ width: `${writingPercentage}%` }}
                 >
                   Writing
@@ -54,7 +58,11 @@ const Home = () => {
               </div>
               <div className="text-white rounded-md bg-gray-300">
                 <span
-                  className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-gold' : 'bg-teal'}`)}
+                  className={clsx(
+                    `text-sm h-full block p-2 rounded-md ${
+                      i === 0 ? 'bg-accent' : 'bg-principal dark:bg-dark-principal'
+                    }`
+                  )}
                   style={{ width: `${speakingPercentage}%` }}
                 >
                   Speaking
@@ -66,7 +74,7 @@ const Home = () => {
       </div>
 
       <p className="text-2xl">Skills</p>
-      <hr className="mt-2 mb-4 border-black" />
+      <hr className="mt-2 mb-4 border-black dark:border-white" />
       <SkillsSection />
     </div>
   )
@@ -87,21 +95,21 @@ const Card = ({ title, association, startDate, endDate, location, description }:
     <div className="grid gap-2 p-4">
       <p className="text-lg font-bold">{title}</p>
       <div className="flex flex-col gap-2 sm:flex-row justify-between">
-        <p className="text-teal font-bold">{association}</p>
+        <p className="font-bold text-principal dark:text-dark-principal">{association}</p>
         <div className="grid sm:flex sm:flex-nowrap gap-2">
           {startDate === endDate ? (
-            <div className="flex gap-2 text-winter">
+            <div className="flex gap-2">
               <Calender /> <p>{formatDate(startDate)}</p>
             </div>
           ) : (
-            <div className="flex gap-2 text-winter">
+            <div className="flex gap-2">
               <Calender /> <p>{formatDateRange(startDate, endDate)}</p>
             </div>
           )}
         </div>
       </div>
       <div className="flex gap-2">
-        <Location /> <p className="text-winter">{location}</p>
+        <Location /> <p>{location}</p>
       </div>
       <p>{description}</p>
       <hr className="mt-4 border-gray-400" />
@@ -116,7 +124,7 @@ const SkillsSection = () => (
         <p className="uppercase mb-4">{category.title}</p>
         <div className="flex flex-wrap gap-4">
           {category.skills.map(skill => (
-            <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 bg-white shadow-lg">
+            <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 shadow-lg">
               {skill}
             </p>
           ))}

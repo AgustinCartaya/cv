@@ -15,7 +15,7 @@ const Card = ({ title, date, description, link }: Publications) => {
   }
 
   return (
-    <details className="grid gap-2 p-4 bg-white border border-gray-300 rounded-lg">
+    <details className="grid gap-2 p-4 bg-white text-black border border-gray-300 rounded-lg">
       <summary className="flex flex-col justify-between cursor-pointer text-lg" onClick={toggleDetails}>
         <div className="flex justify-between items-center">
           <span className="font-bold">{title}</span>
@@ -28,7 +28,7 @@ const Card = ({ title, date, description, link }: Publications) => {
         </div>
       </summary>
       <p>
-        <a href={link} target="_blank" rel="noopener noreferrer" className="text-teal font-bold">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="text-principal dark:text-dark-principal font-bold">
           Link to download
         </a>
       </p>

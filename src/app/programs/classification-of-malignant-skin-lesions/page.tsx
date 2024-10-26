@@ -108,7 +108,7 @@ const Page = () => {
 
         <div className="flex items-center m-6">
           <hr className="flex-1 border-gray-400" />
-          <span className="mx-4 text-black text-2xl">Try the program</span>
+          <span className="mx-4 text-2xl">Try the program</span>
           <hr className="flex-1 border-gray-400" />
         </div>
 

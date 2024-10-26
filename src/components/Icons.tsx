@@ -76,7 +76,7 @@ export const Spinner = () => {
     <div aria-live="polite">
       <svg
         aria-hidden="true"
-        className="w-12 h-12 text-gray-200 animate-spin dark:text-gray-600 fill-teal"
+        className="w-12 h-12 text-gray-200 animate-spin dark:text-gray-600 fill-principal"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -95,22 +95,21 @@ export const Spinner = () => {
   )
 }
 
-type ColorKeys = keyof typeof colors
-
 export const CircularProgress = ({
   percentage,
-  color = 'teal',
+  color,
   title,
 }: {
   percentage: number
-  color?: ColorKeys
+  color?: string
   title: string
 }) => {
   const strokeWidth = 10
   const radius = 50 - strokeWidth / 2
   const circumference = 2 * Math.PI * radius
   const progress = (percentage / 100) * circumference
-  const strokeColor = colors[color]
+  const strokeColor = color === 'accent' ? 'stroke-accent' : 'stroke-principal dark:stroke-dark-principal'
+  const fill = color === 'accent' ? 'fill-accent' : 'fill-principal dark:fill-dark-principal'
 
   return (
     <div className="flex items-center justify-center h-28 w-28">
@@ -122,32 +121,69 @@ export const CircularProgress = ({
           r={radius}
           strokeWidth={strokeWidth}
           className="text-gray-300"
-          stroke="currentColor"
           fill="transparent"
+          stroke="currentColor"
         />
         <circle
           cx="50"
           cy="50"
           r={radius}
           strokeWidth={strokeWidth}
-          stroke={strokeColor}
           fill="transparent"
           strokeDasharray={circumference}
           strokeDashoffset={circumference - progress}
           strokeLinecap="round"
+          className={`${strokeColor}`}
         />
         <text
           x="50%"
           y="50%"
           dominantBaseline="middle"
           textAnchor="middle"
-          fill={strokeColor} // Usar el color correcto
-          className="text-sm font-bold"
+          className={`text-sm font-bold ${fill}`}
           transform="rotate(-270 50 50)"
         >
           {title}
         </text>
       </svg>
     </div>
+  )
+}
+
+export const Sun = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="#ffff"
+      className="size-8"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+      />
+    </svg>
+  )
+}
+
+export const Moon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      strokeWidth="1.5"
+      stroke="#ffff"
+      className="rotate-[245deg] size-8"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+      />
+    </svg>
   )
 }

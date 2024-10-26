@@ -165,7 +165,7 @@ const Form = () => {
       ) : (
         <div className="flex flex-col items-center justify-center p-6">
           {errors.image && typeof errors.image.message === 'string' ? (
-            <p className="text-error text-xl font-bold mt-2">{errors.image.message}</p>
+            <p className="text-red-500 text-xl font-bold mt-2">{errors.image.message}</p>
           ) : (
             <>
               <svg
@@ -213,14 +213,14 @@ const Form = () => {
               disabled={isSubmitting}
               onClick={handleUseTestImage}
               type="button"
-              className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:cursor-not-allowed disabled:opacity-50"
+              className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:cursor-not-allowed disabled:opacity-50"
             >
               Use test image
             </button>
             <button
               type="button"
               onClick={handleResetImage}
-              className="text-sm bg-error hover:bg-red-700 text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+              className="text-sm bg-red-500 hover:bg-red-700 text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
             >
               Discard
             </button>
@@ -229,7 +229,7 @@ const Form = () => {
         <div className="flex items-center justify-center">
           <button
             type="submit"
-            className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isSubmitting}
           >
             Send
@@ -253,7 +253,7 @@ const Form = () => {
               )}
             </div>
           )}
-          {errorMsj && <p className="text-lg text-error mt-4 font-semibold">{errorMsj}</p>}
+          {errorMsj && <p className="text-lg text-red-500 mt-4 font-semibold">{errorMsj}</p>}
           {Object.entries(data).length > 0 && isSubmitSuccessful && (
             <div className="flex flex-col items-center gap-2 my-4">
               <div className="flex justify-center">
@@ -261,7 +261,7 @@ const Form = () => {
                   href={resultImage}
                   target="_blank"
                   download="soft-exudates-detection.png"
-                  className="text-sm bg-teal hover:bg-dark_teal text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Download Image
                 </Link>

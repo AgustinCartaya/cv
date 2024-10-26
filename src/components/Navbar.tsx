@@ -15,7 +15,7 @@ const Menu = () => {
   const pathname = usePathname()
 
   return (
-    <nav className="bg-teal rounded-md mx-6 shadow-lg">
+    <nav className="bg-principal dark:bg-black rounded-md mx-6 shadow-lg">
       <ul className="flex flex-col lg:grid lg:grid-cols-6 m-0 p-0">
         {menuItems.map(item => (
           <li key={item.href}>
@@ -23,8 +23,8 @@ const Menu = () => {
               href={item.href}
               className={`flex justify-center px-6 py-2 capitalize w-full text-white rounded-md ${
                 (item.href !== '/' && pathname.startsWith(item.href)) || pathname === item.href
-                  ? 'bg-dark_teal'
-                  : 'rounded-none hover:bg-dark_teal'
+                  ? 'bg-principal_hover dark:bg-white dark:text-black hover:dark:bg-white'
+                  : 'rounded-none hover:bg-principal_hover hover:dark:text-black hover:dark:bg-white '
               }`}
             >
               {item.label}
