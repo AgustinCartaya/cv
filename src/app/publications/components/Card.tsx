@@ -28,7 +28,7 @@ const Card = ({ title, date, description, link }: Publications) => {
         </div>
       </summary>
       <p>
-        <a href={link} target="_blank" rel="noopener noreferrer" className="text-principal dark:text-dark-principal font-bold">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="text-principal font-bold">
           Link to download
         </a>
       </p>

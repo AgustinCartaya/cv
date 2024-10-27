@@ -7,7 +7,7 @@ const Header = () => {
   const { setTheme } = useTheme()
 
   return (
-    <header className="flex flex-col items-center lg:flex-row gap-20 lg:gap-32 text-white bg-winter dark:bg-dark-principal dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
+    <header className="flex flex-col items-center lg:flex-row gap-20 lg:gap-32 text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
       <div>
         <img
           className="profile__image w-60 h-60 rounded-full lg:ml-6 shadow-lg"
@@ -17,8 +17,8 @@ const Header = () => {
       </div>
 
       <div className="header__content flex flex-col justify-center gap-y-2">
-        <h1 className="content__title text-3xl md:text-5xl dark:text-white">Agustin Cartaya</h1>
-        <span className="content__profession text-lg dark:text-white">MSc Student in Medical Imaging</span>
+        <h1 className="content__title text-3xl md:text-5xl">Agustin Cartaya</h1>
+        <span className="content__profession text-lg">MSc Student in Medical Imaging</span>
         <div className="flex gap-2">
           <a
             href="https://linkedin.com/in/agustincartaya"

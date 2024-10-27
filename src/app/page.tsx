@@ -48,7 +48,7 @@ const Home = () => {
                 <span
                   className={clsx(
                     `text-sm h-full block p-2 rounded-md ${
-                      i === 0 ? 'bg-accent' : 'bg-principal dark:bg-dark-principal '
+                      i === 0 ? 'bg-accent' : 'bg-principal'
                     }`
                   )}
                   style={{ width: `${writingPercentage}%` }}
@@ -60,7 +60,7 @@ const Home = () => {
                 <span
                   className={clsx(
                     `text-sm h-full block p-2 rounded-md ${
-                      i === 0 ? 'bg-accent' : 'bg-principal dark:bg-dark-principal'
+                      i === 0 ? 'bg-accent' : 'bg-principal'
                     }`
                   )}
                   style={{ width: `${speakingPercentage}%` }}
@@ -95,7 +95,7 @@ const Card = ({ title, association, startDate, endDate, location, description }:
     <div className="grid gap-2 p-4">
       <p className="text-lg font-bold">{title}</p>
       <div className="flex flex-col gap-2 sm:flex-row justify-between">
-        <p className="font-bold text-principal dark:text-dark-principal">{association}</p>
+        <p className="font-bold text-principal">{association}</p>
         <div className="grid sm:flex sm:flex-nowrap gap-2">
           {startDate === endDate ? (
             <div className="flex gap-2">
