@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { Spinner } from '@/components/Icons'
 import Link from 'next/link'
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY || 'valor_por_defecto' // Reemplaza 'valor_por_defecto' según sea necesario
 
 // Define Zod schema
 const schema = z.object({
@@ -124,6 +125,9 @@ const Form = () => {
     try {
       const response = await fetch('https://cv-agustin-programs.patrice-danse.com/binary-skin-lesion-detection-ml', {
         method: 'POST',
+        headers: {
+          'x-api-key': API_KEY,
+        },
         body: formData,
         signal: controller.signal,
       })
