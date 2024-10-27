@@ -108,8 +108,8 @@ export const CircularProgress = ({
   const radius = 50 - strokeWidth / 2
   const circumference = 2 * Math.PI * radius
   const progress = (percentage / 100) * circumference
-  const strokeColor = color === 'accent' ? 'stroke-accent' : 'stroke-principal dark:stroke-dark-principal'
-  const fill = color === 'accent' ? 'fill-accent' : 'fill-principal dark:fill-dark-principal'
+  const strokeColor = color === 'accent' ? 'stroke-accent' : 'stroke-principal'
+  const fill = color === 'accent' ? 'fill-accent' : 'fill-principal'
 
   return (
     <div className="flex items-center justify-center h-28 w-28">
@@ -176,7 +176,7 @@ export const Moon = () => {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth="1.5"
-      stroke="#ffff"
+      stroke="#000"
       className="rotate-[245deg] size-8"
     >
       <path

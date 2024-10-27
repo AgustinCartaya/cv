@@ -24,7 +24,7 @@ const Page = () => {
               <div className="flex justify-center">
                 <Link
                   href={`/programs/${url}`}
-                  className="text-sm bg-principal dark:bg-dark-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
+                  className="text-sm bg-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md transition duration-300"
                 >
                   Launch
                 </Link>
