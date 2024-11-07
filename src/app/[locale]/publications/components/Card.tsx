@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Calender, ChevronDoubleDown, ChevronDoubleUp } from '@/components/Icons'
-import { formatMonthYear } from '@/app/utils/dateFormatter'
+import { formatMonthYear } from '@/app/utils/date-formatter'
 
 interface Publications {
   [key: string]: any

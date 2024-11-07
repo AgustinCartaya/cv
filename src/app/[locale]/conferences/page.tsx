@@ -4,7 +4,7 @@ import React from 'react'
 import conferences from '@/../public/conferences/conferences/meta.json'
 import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
-import { formatDateWithOrdinal } from '@/app/utils/dateFormatter'
+import { formatDateWithOrdinal } from '@/app/utils/date-formatter'
 
 const Page = () => {
   const posters = readMeta('/public/conferences/posters').sort((a, b) => {

@@ -9,7 +9,7 @@ import 'slick-carousel/slick/slick-theme.css'
 import Image from 'next/image'
 import { MetaData } from '@/app/utils/read-meta'
 import { Calender, Location } from '@/components/Icons'
-import { formatMonthYear } from '@/app/utils/dateFormatter'
+import { formatMonthYear } from '@/app/utils/date-formatter'
 
 const Card = ({ title, description, images, date, location, code, files, program }: MetaData) => {
   const settings = {

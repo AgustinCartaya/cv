@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
 import awards from '@/../public/awards/meta.json'
-import { formatYear } from '@/app/utils/dateFormatter'
+import { formatYear } from '@/app/utils/date-formatter'
 
 const Page = () => {
   return (
