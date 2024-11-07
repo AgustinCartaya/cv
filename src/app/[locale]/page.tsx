@@ -1,28 +1,30 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Calender, CircularProgress, Location } from '@/components/Icons'
-import academic_background from '@/../public/academic_background/meta.json'
-import skill_categories from '@/../public/skills/meta.json'
+// import skill_categories from '@/../public/skills/meta.json'
 import { formatDate, formatDateRange } from '../utils/date-formatter'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-const languages = [
-  { language: 'Spanish', level: 'Native', writingPercentage: 100, speakingPercentage: 100 },
-  { language: 'English', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
-  { language: 'French', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
-  { language: 'Italian', level: 'Basic', writingPercentage: 60, speakingPercentage: 80 },
-]
+// const languages = [
+//   { language: 'Spanish', level: 'Native', writingPercentage: 100, speakingPercentage: 100 },
+//   { language: 'English', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
+//   { language: 'French', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
+//   { language: 'Italian', level: 'Basic', writingPercentage: 60, speakingPercentage: 80 },
+// ]
 
-const Home = () => {
+const Home = ({ params }: { params: { locale: string } }) => {
   const t = useTranslations('Home')
+  const academic_background = require(`@/../public/academic_background/${params.locale}.json`)
+  const skill_categories = require(`@/../public/skills/${params.locale}.json`)
+  const languages = require(`@/../public/languages/${params.locale}.json`)
 
   return (
     <div className="p-6 h-full">
-      <p className="text-2xl">{t('title')}</p>
+      <p className="text-2xl">{t('aboutMe')}</p>
       <hr className="mt-2 mb-4 p-2 border-black dark:border-white" />
 
-      <p>{t('description')}</p>
-      <p className="text-2xl mt-4">Academic Background</p>
+      <p>{t('aboutMeDescription')}</p>
+      <p className="text-2xl mt-4">{t('academicBackground')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="grid my-6">
         {academic_background.map((data: AcademicBackground) => {
@@ -30,7 +32,7 @@ const Home = () => {
         })}
       </div>
 
-      <p className="text-2xl">Languages</p>
+      <p className="text-2xl">{t('languages')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 my-6">
         {languages.map(({ language, level, writingPercentage, speakingPercentage }, i) => {
@@ -47,7 +49,7 @@ const Home = () => {
                   className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-accent' : 'bg-principal'}`)}
                   style={{ width: `${writingPercentage}%` }}
                 >
-                  Writing
+                  {t('languagesWriting')}
                 </span>
               </div>
               <div className="text-white rounded-md bg-gray-300">
@@ -55,7 +57,7 @@ const Home = () => {
                   className={clsx(`text-sm h-full block p-2 rounded-md ${i === 0 ? 'bg-accent' : 'bg-principal'}`)}
                   style={{ width: `${speakingPercentage}%` }}
                 >
-                  Speaking
+                  {t('languagesSpeaking')}
                 </span>
               </div>
             </div>
@@ -63,9 +65,9 @@ const Home = () => {
         })}
       </div>
 
-      <p className="text-2xl">Skills</p>
+      <p className="text-2xl">{t('skills')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
-      <SkillsSection />
+      <SkillsSection skill_categories={skill_categories} />
     </div>
   )
 }
@@ -107,13 +109,32 @@ const Card = ({ title, association, startDate, endDate, location, description }:
   )
 }
 
-const SkillsSection = () => (
+
+// const SkillsSection = () => (
+//   <div className="grid p-4">
+//     {skill_categories.map(category => (
+//       <div key={category.title} className="mb-8">
+//         <p className="uppercase mb-4">{category.title}</p>
+//         <div className="flex flex-wrap gap-4">
+//           {category.skills.map(skill => (
+//             <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 shadow-lg">
+//               {skill}
+//             </p>
+//           ))}
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+// )
+
+
+const SkillsSection = ({ skill_categories }) => (
   <div className="grid p-4">
-    {skill_categories.map(category => (
+    {skill_categories.map((category) => (
       <div key={category.title} className="mb-8">
         <p className="uppercase mb-4">{category.title}</p>
         <div className="flex flex-wrap gap-4">
-          {category.skills.map(skill => (
+          {category.skills.map((skill) => (
             <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 shadow-lg">
               {skill}
             </p>

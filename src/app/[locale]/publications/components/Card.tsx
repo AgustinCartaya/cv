@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Calender, ChevronDoubleDown, ChevronDoubleUp } from '@/components/Icons'
 import { formatMonthYear } from '@/app/utils/date-formatter'
+import { useTranslations } from 'next-intl'
 
 interface Publications {
   [key: string]: any
@@ -13,6 +14,7 @@ const Card = ({ title, date, description, link }: Publications) => {
   const toggleDetails = () => {
     setIsOpen(!isOpen)
   }
+  const t = useTranslations('Publications')
 
   return (
     <details className="grid gap-2 p-4 bg-white text-black border border-gray-300 rounded-lg">
@@ -29,11 +31,11 @@ const Card = ({ title, date, description, link }: Publications) => {
       </summary>
       <p>
         <a href={link} target="_blank" rel="noopener noreferrer" className="text-principal font-bold">
-          Link to download
+        {t('linkToDownload')}
         </a>
       </p>
       <div className="grid gap-2 mt-2">
-        <p className='underline'>Abstract</p>
+        <p className='underline'>{t('abstract')}</p>
         <p className="text-winter">{description}</p>
       </div>
     </details>

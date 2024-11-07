@@ -1,0 +1,26 @@
+[
+  {
+    "title": "programación",
+    "skills": [
+      "Python",
+      "Java",
+      "C++",
+      "MATLAB",
+      "R",
+      "TensoFlow",
+      "Pytorch",
+      "Windows",
+      "Linux",
+      "OpenGL",
+      "Blender",
+      "Unity",
+      "SQL",
+      "Oracle"
+    ]
+  },
+
+  {
+    "title": "destrezas sociales",
+    "skills": ["Autonomía", "Perseverancia", "Trabajo en equipo", "Resolución de problemas", "Adaptabilidad"]
+  }
+]

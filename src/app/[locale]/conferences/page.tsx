@@ -5,6 +5,7 @@ import React from 'react'
 import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
 import { formatDateWithOrdinal } from '@/app/utils/date-formatter'
+import { useTranslations } from 'next-intl'
 
 const Page = ({ params }: { params: { locale: string } }) => {
     const posters = readMeta('/public/conferences/posters', params.locale).sort((a, b) => {
@@ -14,9 +15,11 @@ const Page = ({ params }: { params: { locale: string } }) => {
   })
 
   const conferences = require(`@/../public/conferences/conferences/${params.locale}.json`)
+  const t = useTranslations('Conferences')
+
   return (
     <div className="p-6 h-full">
-      <p className="text-2xl">Conferences</p>
+      <p className="text-2xl">{t('conferences')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="grid my-6">
         {conferences.map((data: Conferences) => {
@@ -24,7 +27,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
         })}
       </div>
 
-      <p className="text-2xl">Posters</p>
+      <p className="text-2xl">{t('posters')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="flex justify-center h-full">
         <main className="flex gap-6 rounded-lg">
