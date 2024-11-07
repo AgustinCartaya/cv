@@ -9,7 +9,7 @@ const Header = () => {
   const t = useTranslations('Header')
 
   return (
-    <header className="flex flex-col items-center lg:flex-row gap-20 lg:gap-32 text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
+    <header className="flex flex-col items-center lg:flex-row gap-12 lg:gap-32 text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
       <div>
         <img
           className="profile__image w-60 h-60 rounded-full lg:ml-6 shadow-lg"

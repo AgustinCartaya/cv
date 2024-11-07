@@ -1,7 +1,7 @@
 'use client'
 import { usePathname, useParams } from 'next/navigation'
 import Link from 'next/link'
-import {useTranslations} from 'next-intl';
+import { useTranslations } from 'next-intl'
 
 const menuItems = [
   { href: '/', label: 'home' },
@@ -13,26 +13,30 @@ const menuItems = [
 ]
 
 const Menu = () => {
-  const t = useTranslations('Navigation');
+  const t = useTranslations('Navigation')
   const pathname = usePathname()
   const { locale = 'en' } = useParams()
+
   return (
     <nav className="bg-principal dark:bg-black rounded-md mx-6 shadow-lg">
       <ul className="flex flex-col lg:grid lg:grid-cols-6 m-0 p-0">
-        {menuItems.map(item => (
-          <li key={item.href}>
-            <Link
-              href={`/${locale}${item.href}`} // Agrega el prefijo del idioma
-              className={`flex justify-center px-6 py-2 capitalize w-full text-white rounded-md ${
-                (item.href !== '/' && pathname.startsWith(item.href)) || pathname === item.href
-                  ? 'bg-principal_hover dark:bg-white dark:text-black hover:dark:bg-white'
-                  : 'rounded-none hover:bg-principal_hover hover:dark:text-black hover:dark:bg-white '
-              }`}
-            >
-              {t(item.label)}
-            </Link>
-          </li>
-        ))}
+        {menuItems.map(item => {
+          return (
+            <li key={item.href}>
+              <Link
+                href={`/${locale}${item.href}`}
+                className={`flex justify-center px-6 py-2 capitalize w-full text-white rounded-md ${
+                  `${pathname}/` === `/${locale}${item.href}` ||
+                  (item.href !== '/' && pathname.startsWith(`/${locale}${item.href}`))
+                    ? 'bg-principal_hover dark:bg-white dark:text-black'
+                    : 'hover:bg-principal_hover hover:dark:text-black hover:dark:bg-white'
+                }`}
+              >
+                {t(item.label)}
+              </Link>
+            </li>
+          )
+        })}
       </ul>
     </nav>
   )
