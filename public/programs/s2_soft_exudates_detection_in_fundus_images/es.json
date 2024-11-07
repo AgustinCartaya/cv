@@ -1,0 +1,5 @@
+{
+  "url": "soft-exudates-detection",
+  "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
+  "description": "Esta aplicación está diseñada para detectar exudados blandos en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Sube tu imagen de fondo de ojo para detectar exudados blandos. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+}

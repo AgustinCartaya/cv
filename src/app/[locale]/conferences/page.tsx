@@ -1,10 +1,10 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Calender, Location } from '@/components/Icons'
 import React from 'react'
-import conferences from '../../../public/conferences/conferences/meta.json'
-import { readMeta } from '../utils/read-meta'
+import conferences from '@/../public/conferences/conferences/meta.json'
+import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
-import { formatDateWithOrdinal } from '../utils/dateFormatter'
+import { formatDateWithOrdinal } from '@/app/utils/dateFormatter'
 
 const Page = () => {
   const posters = readMeta('/public/conferences/posters').sort((a, b) => {

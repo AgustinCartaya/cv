@@ -1,0 +1,5 @@
+{
+    "url": "melanoma-detection-in-dermoscopy-images",
+    "title": "Detección de Melanoma en Imágenes de Dermoscopia",
+    "description": "Esta aplicación está diseñada para diferenciar entre melanomas y lesiones cutáneas benignas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Sube tu imagen de dermoscopia para clasificar la lesión cutánea como benigna o maligna. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+}

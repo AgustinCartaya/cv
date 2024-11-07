@@ -42,8 +42,8 @@ const mapFiles = (files: string[], basePath: string): { title: string; source: s
 }
 
 // Obtener metadatos desde una carpeta
-const getMetaDataFromFolder = (folderPath: string): MetaData | null => {
-  const metaFilePath = path.join(folderPath, 'meta.json')
+const getMetaDataFromFolder = (folderPath: string, locale: string): MetaData | null => {
+  const metaFilePath = path.join(folderPath, `${locale}.json`)
   if (!fs.existsSync(metaFilePath)) {
     return null
   }
@@ -76,14 +76,14 @@ const getMetaDataFromFolder = (folderPath: string): MetaData | null => {
 }
 
 // Leer metadatos de las carpetas y subcarpetas
-export const readMeta = (dir: string): MetaData[] => {
+export const readMeta = (dir: string, locale: string = 'meta'): MetaData[] => {
   const projectDir = path.join(process.cwd(), dir)
   const folders = readDirectory(projectDir).filter(folder => isDirectory(path.join(projectDir, folder)))
   const metaData: MetaData[] = []
 
   folders.forEach(folder => {
     const folderPath = path.join(projectDir, folder)
-    const data = getMetaDataFromFolder(folderPath)
+    const data = getMetaDataFromFolder(folderPath, locale)
 
     if (data) {
       metaData.push(data)
@@ -92,7 +92,7 @@ export const readMeta = (dir: string): MetaData[] => {
       const subfolders = readDirectory(folderPath).filter(subfolder => isDirectory(path.join(folderPath, subfolder)))
       subfolders.forEach(subfolder => {
         const subfolderPath = path.join(folderPath, subfolder)
-        const subfolderData = getMetaDataFromFolder(subfolderPath)
+        const subfolderData = getMetaDataFromFolder(subfolderPath, locale)
         if (subfolderData) {
           metaData.push(subfolderData)
         }
