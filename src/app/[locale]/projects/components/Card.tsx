@@ -1,5 +1,4 @@
 'use client'
-
 import React from 'react'
 import Link from 'next/link'
 import Slider from 'react-slick'
@@ -10,6 +9,7 @@ import Image from 'next/image'
 import { MetaData } from '@/app/utils/read-meta'
 import { Calender, Location } from '@/components/Icons'
 import { formatMonthYear } from '@/app/utils/date-formatter'
+import { useParams } from 'next/navigation'
 
 const Card = ({ title, description, images, date, location, code, files, program }: MetaData) => {
   const settings = {
@@ -20,7 +20,7 @@ const Card = ({ title, description, images, date, location, code, files, program
     nextArrow: <Arrow direction="next" />,
     prevArrow: <Arrow direction="prev" />,
   }
-
+  const { locale = 'en' } = useParams()
   return (
     <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42 text-black">
       <ImageSlider images={images} settings={settings} />
@@ -36,7 +36,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             {formatMonthYear(date)}
           </p>
         </div>
-        <hr className='border-gray-400'/>
+        <hr className="border-gray-400" />
         <p
           className="text-gray-600 text-sm max-h-32 overflow-y-auto"
           dangerouslySetInnerHTML={{ __html: description }}
@@ -71,7 +71,7 @@ const Card = ({ title, description, images, date, location, code, files, program
         )}
         {program && (
           <Link
-            href={program}
+            href={`/${locale}${program}`}
             rel="noopener noreferrer"
             key={uuidv4()}
             className="text-sm text-white bg-principal hover:bg-principal_hover uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
