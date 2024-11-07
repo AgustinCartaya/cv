@@ -3,6 +3,7 @@ import React from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun } from './Icons'
 import { useTranslations } from 'next-intl'
+import LocaleSwitcher from './LocaleSwitcher'
 
 const Header = () => {
   const { setTheme } = useTheme()
@@ -46,13 +47,14 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex sm:ml-6">
+      <div className="flex flex-col items-center gap-6 sm:ml-6">
         <button className="dark:hidden" onClick={() => setTheme('dark')}>
           <Sun />
         </button>
         <button className="hidden dark:block" onClick={() => setTheme('light')}>
           <Moon />
         </button>
+        <LocaleSwitcher />
       </div>
     </header>
   )
