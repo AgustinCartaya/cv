@@ -1,0 +1,6 @@
+{
+    "title": "NeuroSculpt: Pronóstico de la Estructura Cerebral 9 Años Adelante Usando MRI Estructural",
+    "description": "Esta tesis de maestría se centra en predecir cambios estructurales en el cerebro durante nueve años en una población adulta sana utilizando imágenes de RM ponderadas en T1 en 3D. La detección temprana de cambios cerebrales es crucial para prevenir enfermedades neurodegenerativas como la demencia y el Parkinson. La tesis explora dos métodos: Campos de Deformación (DFs) y técnicas de aprendizaje profundo basadas en Redes Generativas Antagónicas (GANs). Los resultados mostraron que las técnicas basadas en DF fueron más efectivas y estables, capturando cambios sutiles en el tálamo y la corteza, así como cambios significativos en los ventrículos. En contraste, las GANs predijeron principalmente cambios volumétricos en los ventrículos. Esta investigación proporciona una base para futuros estudios, destacando el potencial de los enfoques basados en DF y sugiriendo mejoras para los métodos de GAN.",
+    "date": "2024-06-26",
+    "location": "NTNU, Trondheim, Noruega"
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "title":"MAIA Day 2024",
+        "startDate":"2024-06-27",
+        "endDate":"2024-06-27",
+        "location": "Gaeta, Italy",
+        "role": "Speaker, Poster presenter",
+        "link": "https://maiamaster.udg.edu/maia-day/"
+    },
+    
+    {
+        "title":"The Aging Brain Conference 2024",
+        "startDate":"2024-06-12",
+        "endDate":"2024-06-14",
+        "location": "Geiranger, Norway",
+        "role": "Poster presenter",
+        "link": "https://www.stolav.no/49bf3e/contentassets/23910b4acae2441a8f4430254ca1c700/program-the-aging-brain12-14.06-.2024_updated_mayv2.pdf"
+    },
+
+    {
+        "title":"The 2024 180°N Conference in Trondheim",
+        "startDate":"2024-04-09",
+        "endDate":"2024-04-11",
+        "location": "Trondheim, Norway",
+        "role": "Listener",
+        "link": "https://www.ntnu.edu/web/180n/the-2024-180n-conference-in-trondheim"
+    }
+
+
+]

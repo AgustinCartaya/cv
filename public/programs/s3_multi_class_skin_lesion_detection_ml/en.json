@@ -1,7 +1,33 @@
 
 {
-    "url": "classification-of-malignant-skin-lesions",
-    "title":"Classification of Malignant Skin Lesions",
-    "description": "This application is designed to differentiate between melanomas, Basal Cells and Squamous cell in dermoscopy images using image processing algorithms combined with machine learning. Upload your dermoscopy image to classify the skin lesion as benign or malignant. <strong>Attention! This application is not validated for medical use and was created solely for academic purposes.</strong>"
+    "card":{
+        "url": "classification-of-malignant-skin-lesions",
+        "title":"Classification of Malignant Skin Lesions",
+        "description": "This application is designed to differentiate between melanomas, Basal Cells and Squamous cell in dermoscopy images using image processing algorithms combined with machine learning. Upload your dermoscopy image to classify the skin lesion as benign or malignant. <strong>Attention! This application is not validated for medical use and was created solely for academic purposes.</strong>"
+    },
+
+    "page":
+    {
+        "title":"Classification of Malignant Skin Lesions",
+        "description":"This application is designed to differentiate between melanomas, Basal Cells and Squamous cell in dermoscopy images using image processing algorithms combined with machine learning. All the code for this project is available on my <Link className='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-multi-class-skin-lesion-detection-ml.git' > GitHub </Link> , and a detailed report can be found in the projects section of this website.",
+        "howToUse":["Upload your dermoscopy image in the designated area.",
+          "Click <strong>Send</strong> to run the program.",
+          "Wait for the result image (the analysis may take a few minutes)."],
+
+        "howToUseTestImage":"You can also use the test image available to see how the application works. Simply select <strong>Use Test Image</strong>.",
+        "requirements":[
+          "The image must be a dermoscopy image with the lesion centered.",
+          "It should not contain any prior segmentations or annotations (ruler marks are allowed).",
+          "The image must be in color."
+        ],
+
+        "output":[
+          "A processed image with the lesion outlined in green.",
+          "A classification of the lesion as melanoma, basal cell or squamous cell.",
+          "A probability score for the classification of each class." 
+        ],
+          
+        "notice":"This application is intended for academic purposes only and is not validated for use by medical professionals. The results may not be fully accurate, as the algorithm is still under development."
+    }
 }
 

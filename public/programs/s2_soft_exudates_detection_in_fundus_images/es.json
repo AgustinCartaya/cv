@@ -1,5 +1,33 @@
 {
-  "url": "soft-exudates-detection",
-  "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
-  "description": "Esta aplicación está diseñada para detectar exudados blandos en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Sube tu imagen de fondo de ojo para detectar exudados blandos. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+  "card": {
+      "url": "soft-exudates-detection",
+      "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
+      "description": "Esta aplicación está diseñada para detectar exudados blandos en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Carga tu imagen de fondo de ojo para detectar exudados blandos. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+  },
+  
+  "page": {
+      "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
+      "description": "Esta aplicación está diseñada para detectar exudados blandos (SEx) en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <Link className='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</Link>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
+      "howToUse": [
+          "Carga tu imagen de fondo de ojo en el área designada.",
+          "Haz clic en <strong>Enviar</strong> para ejecutar el programa.",
+          "Espera la imagen de resultados (el análisis puede tardar unos minutos)."
+      ],
+      "howToUseTestImage": "También puedes usar la imagen de prueba proporcionada para ver cómo funciona la aplicación seleccionando <strong>Usar Imagen de Prueba</strong>.",
+      "requirements": [
+          "La imagen debe ser una imagen de fondo de ojo, centrada en el ojo con un fondo negro.",
+          "No debe contener segmentaciones o anotaciones previas.",
+          "La imagen debe ser en color.",
+          "Resolución mínima: 1500 x 1500 píxeles."
+      ],
+      "output": [
+          "Candidatos iniciales identificados por un algoritmo básico, contorneados en blanco.",
+          "Candidatos sospechosos de SEx contorneados en azul.",
+          "El disco óptico contorneado en negro.",
+          "Número de candidatos identificados por un algoritmo básico.",
+          "Número de candidatos sospechosos de SEx."
+      ],
+      "example": "<Image width={600} height={100} className='rounded-md lg:rounded-l-lg' src={'/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_2.png'} alt={'sex_detection_program.png'}/>",
+      "notice": "Esta aplicación está destinada únicamente para fines académicos y no está validada para su uso por profesionales médicos. Los resultados pueden no ser completamente precisos, ya que el algoritmo aún está en desarrollo."
+  }
 }

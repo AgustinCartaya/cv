@@ -1,0 +1,6 @@
+{
+    "title": "Diagnostic Dermoscopique Utilisant Deep Learning",
+    "description": "Ce projet se concentre sur la détection des lésions cutanées en utilisant des architectures de deep learning. Deux tâches principales ont été abordées : la classification binaire pour distinguer entre les lésions bénignes et les mélanomes, et la classification multiclasses pour différencier le mélanome, le carcinome basocellulaire et le carcinome épidermoïde. Nous avons mis en œuvre deux fonctions de perte innovantes : Mask Loss, basée sur le coefficient de corrélation de Pearson entre le masque réel et les Cartes d'Activation des Classes (CAMs), et Center Loss, qui utilise la distance euclidienne entre les caractéristiques de l'image et les centres de classe. Ces fonctions améliorent la discrimination des caractéristiques entre les classes tout en minimisant la variance intra-classe.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, Espagne"
+}

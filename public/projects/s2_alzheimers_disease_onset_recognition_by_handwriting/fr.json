@@ -1,0 +1,7 @@
+{
+    "title": "Reconnaissance de l'Onset de la Maladie d'Alzheimer par l'Écriture",
+    "description": "Cette étude combine l'apprentissage automatique (ML) et l'apprentissage profond (DL) pour la détection précoce de la maladie d'Alzheimer en utilisant l'analyse de l'écriture. Nous avons utilisé trois approches : (1) Analyse d'images avec des architectures d'apprentissage profond telles que VGG19, ResNet50 et Inception pour extraire des caractéristiques profondes des images d'écriture, (2) Classificateurs d'apprentissage automatique tels que l'Arbre de Décision, le Gradient Boosting et SVM tirant parti des caractéristiques d'apprentissage profond pour améliorer la précision, et (3) Analyse de la dynamique des gestes du stylo, examinant à la fois les gestes dans l'air et sur le papier pour identifier les troubles moteurs. Cette approche multifacette améliore considérablement le diagnostic précoce de la maladie d'Alzheimer en distinguant les individus sains de ceux présentant des troubles cognitifs. Le projet de recherche original est disponible à l'<a style='color: blue; text-transform: capitalize;' target='_blank' href='https://doi.org/10.1016/j.engappai.2022.104822'>lien</a>",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italie"
+  }
+  

@@ -1,0 +1,7 @@
+{
+    "title": "Reconocimiento del Inicio de la Enfermedad de Alzheimer mediante Análisis de la Escritura",
+    "description": "Este estudio combina machine learning (ML) y deep learning (DL) para la detección temprana del Alzheimer utilizando el análisis de la escritura. Utilizamos tres enfoques: (1) Análisis de imágenes con arquitecturas de deep learning como VGG19, ResNet50 e Inception para extraer características profundas de las imágenes de escritura, (2) Clasificadores de machine learning como Árbol de Decisión, Gradient Boosting y SVM aprovechando las características del deep learning para mejorar la precisión, y (3) Análisis de la dinámica de los gestos con el bolígrafo, examinando tanto los gestos en el aire como en el papel para identificar deterioros motores. Este enfoque multifacético mejora significativamente el diagnóstico temprano del Alzheimer al distinguir entre individuos sanos y aquellos con deterioro cognitivo. El proyecto original de investigación se puede encontrar en <a style='color: blue; text-transform: capitalize;' target='_blank' href='https://doi.org/10.1016/j.engappai.2022.104822'>enlace</a>",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italia"
+  }
+  

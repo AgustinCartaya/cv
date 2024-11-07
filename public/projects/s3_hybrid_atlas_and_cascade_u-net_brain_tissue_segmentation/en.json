@@ -1,0 +1,8 @@
+
+{
+    "title":"Hybrid Atlas and Cascade U-NET Brain Tissue Segmentation",
+    "description": "This project aims to develop an AI-based method for segmenting the three main brain tissues: white matter (WM), grey matter (GM), and cerebrospinal fluid (CSF), using magnetic resonance imaging (MRI). The approach integrates a probabilistic atlas as prior spatial information into a deep learning model to achieve accurate segmentation.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, Spain"
+}
+

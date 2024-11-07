@@ -1,0 +1,8 @@
+{
+    "title": "Classification de la Maladie d'Alzheimer à l'aide de l'IRM et des Données d'Expression Génétique",
+    "description": "Ce projet se concentre sur le développement de modèles d'apprentissage automatique pour diagnostiquer la Maladie d'Alzheimer (MA) et ses premiers stades à l'aide de scans IRM et de données d'expression génétique. Nous visons à classer les patients dans différentes étapes du déclin cognitif : Maladie d'Alzheimer (MA), Déclin Cognitif Léger (DCL) et témoins sains (CTL). Les modèles sont formés à partir d'une combinaison de données d'imagerie médicale et de données génétiques, en utilisant des techniques avancées de sélection de caractéristiques et de classification pour optimiser la précision des prédictions. L'objectif est de contribuer au diagnostic précoce et d'améliorer la compréhension de la progression de la Maladie d'Alzheimer grâce à une analyse fondée sur les données.",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italie",
+    "code": "https://github.com/AgustinCartaya/s2-alzheimers-isease-classification-mri-gene-expression.git"
+  }
+  

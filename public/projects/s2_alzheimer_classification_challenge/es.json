@@ -1,0 +1,8 @@
+{
+    "title": "Clasificación de la Enfermedad de Alzheimer utilizando Imágenes por RM y Datos de Expresión Génica",
+    "description": "Este proyecto se centra en el desarrollo de modelos de machine learning para diagnosticar la Enfermedad de Alzheimer (EA) y sus primeras etapas utilizando escaneos por RM y datos de expresión génica. Nuestro objetivo es clasificar a los pacientes en diferentes etapas de deterioro cognitivo: Enfermedad de Alzheimer (EA), Deterioro Cognitivo Leve (DCL) y controles sanos (CTL). Los modelos se entrenan con una combinación de datos de imágenes médicas y datos genéticos, utilizando técnicas avanzadas de selección de características y clasificación para optimizar la precisión de la predicción. El objetivo es contribuir al diagnóstico temprano y mejorar la comprensión de la progresión de la Enfermedad de Alzheimer mediante un análisis basado en datos.",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italia",
+    "code": "https://github.com/AgustinCartaya/s2-alzheimers-isease-classification-mri-gene-expression.git"
+  }
+  

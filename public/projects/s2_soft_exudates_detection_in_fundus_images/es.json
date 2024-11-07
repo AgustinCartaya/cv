@@ -1,0 +1,8 @@
+{
+    "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
+    "description": "Este proyecto presenta un enfoque integral para la detección temprana de la retinopatía diabética mediante la identificación de exudados blandos (SEx) en imágenes de fondo de ojo. El proceso comienza con un preprocesamiento para mejorar la calidad de la imagen, abordando desafíos como la apariencia variable de los exudados y el bajo contraste. Además, se ha implementado una innovadora técnica de eliminación del disco óptico para eliminar posibles falsos positivos. Luego, se emplea una estrategia de segmentación en dos etapas: la segmentación básica aísla las áreas potenciales de SEx, mientras que la segmentación avanzada refina estas regiones para un análisis más preciso. Posteriormente, se realiza la extracción de características, extrayendo las características clave de las áreas segmentadas para distinguir con precisión los SEx de otras lesiones retinianas. Finalmente, se aplican algoritmos sofisticados de machine learning para la clasificación de los SEx.",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italia",
+    "code": "https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git",
+    "program": "/programs/soft-exudates-detection"
+}

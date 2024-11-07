@@ -1,0 +1,29 @@
+[
+    {
+      "title": "Master en Imagerie Médicale et Applications",
+      "association": "Master Commun Erasmus Mundus MAIA",
+      "startDate": "2022-07-06",
+      "endDate": "2024-06-27",
+      "location": "uB – France; UdG – Espagne; UNICAS – Italie; NTNU – Norvège",
+      "description": "Spécialisé dans l'analyse d'images médicales et les systèmes CAD utilisant des algorithmes avancés d'apprentissage automatique et d'apprentissage profond."
+    },
+    
+    {
+      "title": "Licence en Informatique",
+      "association": "Université de Bourgogne",
+      "startDate": "2019-07-12",
+      "endDate": "2022-06-01",
+      "location": "Dijon, France",
+      "description": "Spécialisé dans le traitement d'images et la synthèse d'images."
+    },
+    
+    {
+      "title": "Ingénierie Électronique (5 semestres)",
+      "association": "UNEXPO",
+      "startDate": "2017-11-01",
+      "endDate": "2019-09-01",
+      "location": "Guayana, Venezuela",
+      "description": ""
+    }
+  ]
+  

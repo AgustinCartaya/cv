@@ -1,0 +1,8 @@
+{
+    "title": "Détection des Exsudats Mous dans les Images de Fond d'Œil",
+    "description": "Ce projet présente une approche complète pour la détection précoce de la rétinopathie diabétique par l'identification des exsudats mous (SEx) dans les images de fond d'œil. Le processus commence par un prétraitement pour améliorer la qualité de l'image, en abordant des défis tels que l'apparence variable des exsudats et le faible contraste. De plus, une technique innovante de suppression du disque optique a été mise en œuvre pour éliminer les faux positifs potentiels. Ensuite, une stratégie de segmentation en deux étapes est utilisée : la segmentation de base isole les zones potentielles de SEx, tandis que la segmentation avancée affine ces régions pour une analyse plus précise. Ensuite, une extraction de caractéristiques est réalisée, extrayant les caractéristiques clés des zones segmentées pour distinguer avec précision les SEx des autres lésions rétiniennes. Enfin, des algorithmes sophistiqués d'apprentissage automatique sont appliqués pour la classification des SEx.",
+    "date": "2023-06-01",
+    "location": "UNICAS, Cassino, Italie",
+    "code": "https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git",
+    "program": "/programs/soft-exudates-detection"
+}

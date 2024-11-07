@@ -1,5 +1,29 @@
 {
-  "url": "classification-of-malignant-skin-lesions",
-  "title": "Clasificación de Lesiones Cutáneas Malignas",
-  "description": "Esta aplicación está diseñada para diferenciar entre melanomas, células basales y células escamosas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Sube tu imagen de dermoscopia para clasificar la lesión cutánea como benigna o maligna. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+  "card": {
+      "url": "classification-of-malignant-skin-lesions",
+      "title": "Clasificación de Lesiones Cutáneas Malignas",
+      "description": "Esta aplicación está diseñada para diferenciar entre melanomas, células basales y células escamosas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Carga tu imagen de dermoscopia para clasificar la lesión cutánea como benigna o maligna. <strong>¡Atención! Esta aplicación no está validada para uso médico y fue creada únicamente con fines académicos.</strong>"
+  },
+
+  "page": {
+      "title": "Clasificación de Lesiones Cutáneas Malignas",
+      "description": "Esta aplicación está diseñada para diferenciar entre melanomas, células basales y células escamosas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <Link className='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-multi-class-skin-lesion-detection-ml.git'>GitHub</Link>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
+      "howToUse": [
+          "Carga tu imagen de dermoscopia en el área designada.",
+          "Haz clic en <strong>Enviar</strong> para ejecutar el programa.",
+          "Espera la imagen de resultados (el análisis puede tardar unos minutos)."
+      ],
+      "howToUseTestImage": "También puedes utilizar la imagen de prueba disponible para ver cómo funciona la aplicación. Simplemente selecciona <strong>Usar Imagen de Prueba</strong>.",
+      "requirements": [
+          "La imagen debe ser una imagen de dermoscopia con la lesión centrada.",
+          "No debe contener segmentaciones o anotaciones previas (se permiten marcas de regla).",
+          "La imagen debe ser en color."
+      ],
+      "output": [
+          "Una imagen procesada con la lesión contorneada en verde.",
+          "Una clasificación de la lesión como melanoma, célula basal o célula escamosa.",
+          "Un puntaje de probabilidad para la clasificación de cada clase."
+      ],
+      "notice": "Esta aplicación está destinada únicamente a fines académicos y no está validada para su uso por profesionales médicos. Los resultados pueden no ser completamente precisos, ya que el algoritmo aún está en desarrollo."
+  }
 }
