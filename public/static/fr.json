@@ -1,0 +1,17 @@
+{
+  "Home": {
+    "title": "À Propos de Moi",
+    "description": "Je me spécialise dans l'analyse d'images médicales, en développant une large gamme d'algorithmes, y compris des méthodes d'apprentissage automatique et de deep learning, pour extraire des caractéristiques, segmenter, classer et analyser des données médicales. J'ai un intérêt particulier pour l'analyse des données cérébrales et je souhaite contribuer à une meilleure compréhension des fonctions complexes du cerveau humain, telles que la mémoire et le comportement."
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "publications": "Publications",
+    "awards": "Distinctions",
+    "conferences": "Conférences",
+    "programs": "Programmes"
+  },
+  "Header": {
+    "title": "Étudiant en Master en Imagerie Médicale"
+  }
+}

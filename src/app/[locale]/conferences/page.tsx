@@ -1,18 +1,19 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Calender, Location } from '@/components/Icons'
 import React from 'react'
-import conferences from '@/../public/conferences/conferences/meta.json'
+// import conferences from '@/../public/conferences/conferences/meta.json'
 import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
 import { formatDateWithOrdinal } from '@/app/utils/date-formatter'
 
-const Page = () => {
-  const posters = readMeta('/public/conferences/posters').sort((a, b) => {
+const Page = ({ params }: { params: { locale: string } }) => {
+    const posters = readMeta('/public/conferences/posters', params.locale).sort((a, b) => {
     const dateA = new Date(a.date || '1970-01-01')
     const dateB = new Date(b.date || '1970-01-01')
     return dateB.getTime() - dateA.getTime()
   })
 
+  const conferences = require(`@/../public/conferences/conferences/${params.locale}.json`)
   return (
     <div className="p-6 h-full">
       <p className="text-2xl">Conferences</p>

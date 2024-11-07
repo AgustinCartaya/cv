@@ -1,9 +1,10 @@
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
-import awards from '@/../public/awards/meta.json'
 import { formatYear } from '@/app/utils/date-formatter'
 
-const Page = () => {
+const Page = ({ params }: { params: { locale: string } }) => {
+  const awards = require(`@/../public/awards/${params.locale}.json`)
+
   return (
     <ul className="list-disc p-6 ml-4 grid gap-2">
       {awards.map(award => {
@@ -17,4 +18,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Page

@@ -2,8 +2,8 @@ import { readMeta } from '@/app/utils/read-meta'
 import Card from '@/app/[locale]/projects/components/Card'
 import { v4 as uuidv4 } from 'uuid'
 
-const Page = () => {
-  const projects = readMeta('/public/projects').sort((a, b) => {
+const Page = ({ params }: { params: { locale: string } }) => {
+  const projects = readMeta('/public/projects', params.locale).sort((a, b) => {
     const dateA = new Date(a.date || '1970-01-01')
     const dateB = new Date(b.date || '1970-01-01')
     return dateB.getTime() - dateA.getTime()

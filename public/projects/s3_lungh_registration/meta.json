@@ -1,8 +1,0 @@
-
-{
-    "title":"Image registration of chest CT volumes",
-    "description": "This project compares image registration methods for 4D CT scans of the lungs during inhalation and exhalation. It contrasts Elastix's traditional affine and BSpline approaches with VoxelMorph's deep learning algorithm, achieving an average Target Registration Error of 4.12mm. The study aims to enhance alignment accuracy for Chronic Obstructive Pulmonary Disease diagnosis and treatment.",
-    "date": "2024-01-01",
-    "location": "UdG, Girona, Spain"
-}
-

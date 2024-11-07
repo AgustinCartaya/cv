@@ -1,8 +1,0 @@
-
-{
-    "title":"Dermoscopic diagnosis using Deep Learning",
-    "description": "This project focuses on skin lesion detection using deep learning architectures. Two main tasks were addressed: binary classification distinguishing between benign lesions and melanomas, and multi-class classification differentiating between melanoma, basal cell carcinoma, and squamous cell carcinoma. We implemented two innovative loss functions: Mask Loss, based on the Pearson correlation coefficient between the actual mask and the Class Activation Maps (CAMs), and Center Loss, which utilizes the Euclidean distance between image features and class centers. These functions enhance feature discrimination across classes while minimizing intra-class variance.",
-    "date": "2024-01-01",
-    "location": "UdG, Girona, Spain"
-}
-
