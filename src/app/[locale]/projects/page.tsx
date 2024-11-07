@@ -1,5 +1,5 @@
-import { readMeta } from '../utils/read-meta'
-import Card from '@/app/projects/components/Card'
+import { readMeta } from '@/app/utils/read-meta'
+import Card from '@/app/[locale]/projects/components/Card'
 import { v4 as uuidv4 } from 'uuid'
 
 const Home = () => {

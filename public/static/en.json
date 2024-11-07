@@ -1,0 +1,17 @@
+{
+  "Home": {
+    "title": "About Me",
+    "description": "I specialize in medical image analysis, developing a wide range of algorithms, including machine learning and deep learning methods, to extract features, segment, classify, and analyze medical data. I have a particular interest in brain data analysis and in contributing to a deeper understanding of complex human brain functions, such as memory and behavior."
+  },
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "publications": "Publications",
+    "awards": "Awards",
+    "conferences": "Conferences",
+    "programs": "Programs"
+  },
+  "Header": {
+    "title": "MSc Student in Medical Imaging"
+  }
+}

@@ -2,9 +2,11 @@
 import React from 'react'
 import { useTheme } from 'next-themes'
 import { Moon, Sun } from './Icons'
+import { useTranslations } from 'next-intl'
 
 const Header = () => {
   const { setTheme } = useTheme()
+  const t = useTranslations('Header')
 
   return (
     <header className="flex flex-col items-center lg:flex-row gap-20 lg:gap-32 text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
@@ -18,7 +20,7 @@ const Header = () => {
 
       <div className="header__content flex flex-col justify-center gap-y-2">
         <h1 className="content__title text-3xl md:text-5xl">Agustin Cartaya</h1>
-        <span className="content__profession text-lg">MSc Student in Medical Imaging</span>
+        <span className="content__profession text-lg">{t('title')}</span>
         <div className="flex gap-2">
           <a
             href="https://linkedin.com/in/agustincartaya"

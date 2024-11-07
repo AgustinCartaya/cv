@@ -1,6 +1,6 @@
 import { v4 as uuidv4 } from 'uuid'
 import React from 'react'
-import { readMeta } from '../utils/read-meta'
+import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
 
 const Page = () => {
