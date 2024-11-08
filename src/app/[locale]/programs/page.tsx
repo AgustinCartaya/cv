@@ -5,10 +5,11 @@ import { v4 as uuidv4 } from 'uuid'
 
 const Page = ({ params }: { params: { locale: string } }) => {
   const programs = readMeta('/public/programs', params.locale)
-
+  const programsCards = programs.map(data => ({ ...data.card, images: data.images, url: data.url }))
+  
   return (
     <div className="grid gap-4 p-6 text-black">
-      {programs.map(({ title, description, images, url }) => {
+      {programsCards.map(({ title, description, images, url }) => {
         return (
           <div key={uuidv4()} className="flex flex-col p-6 lg:flex-row gap-4 shadow-md bg-white rounded-md">
             <div className="flex justify-center">
