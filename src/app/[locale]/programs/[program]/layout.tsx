@@ -5,7 +5,7 @@ const Layout = ({ children, params }: { children: React.ReactNode; params: { loc
   return (
     <>
       <div className="container mx-auto p-6 pb-0">
-        <Link href={`/${params.locale}/programs`} className="flex">
+        <Link href={`/${params.locale}/programs`} className="inline-block">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
