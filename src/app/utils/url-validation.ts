@@ -6,18 +6,13 @@ const getBaseUrl = () => {
   return '' // Return an empty string if running on the server
 }
 
-export function verifyURL(text: string): string {
-  const urlRegex = /^(https?:\/\/|www\.)[^\s/$.?#].[^\s]*$/i
-  // Check if the text is a full URL
-  if (urlRegex.test(text)) {
+export const fullUrlRegex = /^(https?:\/\/|www\.)[^\s/$.?#].[^\s]*$/i
+
+export function verifyURL(text: string, locale: string | string[]): string {
+  if (fullUrlRegex.test(text)) {
     return text
   }
 
-  // Check if it's a relative path starting with "/"
-  if (text.startsWith('/')) {
-    return `${getBaseUrl()}${text}`
-  }
-
   // Otherwise, add the base URL with a leading slash
-  return `${getBaseUrl()}/${text}`
+  return `${getBaseUrl()}/${locale}${text}`
 }
