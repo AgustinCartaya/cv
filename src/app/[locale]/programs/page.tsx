@@ -2,11 +2,13 @@ import Link from 'next/link'
 import React from 'react'
 import { readMeta } from '@/app/utils/read-meta'
 import { v4 as uuidv4 } from 'uuid'
+import { useTranslations } from 'next-intl'
 
 const Page = ({ params }: { params: { locale: string } }) => {
   const programs = readMeta('/public/programs', params.locale)
   const programsCards = programs.map(data => ({ ...data.card, images: data.images, url: data.url }))
-  
+  const t = useTranslations('Programs')
+
   return (
     <div className="grid gap-4 p-6 text-black">
       {programsCards.map(({ title, description, images, url }) => {
@@ -23,7 +25,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
                   href={`/${params.locale}/programs/${url}`}
                   className="text-sm bg-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md transition duration-300"
                 >
-                  Launch
+                  {t('btLaunch')}
                 </Link>
               </div>
             </div>

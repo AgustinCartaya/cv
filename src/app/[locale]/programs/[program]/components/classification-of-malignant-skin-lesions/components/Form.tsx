@@ -6,6 +6,7 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import clsx from 'clsx'
 import { Spinner } from '@/components/Icons'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
 
 // Define Zod schema
 const schema = z.object({
@@ -46,6 +47,8 @@ const Form = () => {
   const [abortController, setAbortController] = useState<AbortController | null>(null)
   const [data, setData] = useState<DataType>({})
   const [errorMsj, setErrorMsj] = useState('')
+  // trasnlations
+  const t = useTranslations('Programs')
 
   const handleResetImage = () => {
     setImagePreview(null)
@@ -189,9 +192,9 @@ const Form = () => {
                 />
               </svg>
               <p className="mb-2 text-sm text-gray-500">
-                <span className="font-semibold">Click to upload</span> or drag and drop
+                <span className="font-semibold">{t('textDragDrop1')}</span> {t('textDragDrop2')}
               </p>
-              <p className="text-xs text-gray-500">PNG, BMP, JPG (MIN. 1500x1500px)</p>
+              <p className="text-xs text-gray-500">PNG, BMP, JPG</p>
             </>
           )}
         </div>
@@ -220,14 +223,14 @@ const Form = () => {
               type="button"
               className="text-sm bg-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md transition duration-300 disabled:cursor-not-allowed disabled:opacity-50"
             >
-              Use test image
+              {t('btUseTestImage')}
             </button>
             <button
               type="button"
               onClick={handleResetImage}
               className="text-sm bg-red-500 hover:bg-red-700 text-white uppercase px-4 py-2 rounded shadow-md transition duration-300"
             >
-              Discard
+              {t('btDiscard')}
             </button>
           </div>
         </div>
@@ -237,7 +240,7 @@ const Form = () => {
             className="text-sm bg-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             disabled={isSubmitting}
           >
-            Send
+            {t('btSend')}
           </button>
         </div>
         <div className="flex-1">
@@ -268,7 +271,7 @@ const Form = () => {
                   download="soft-exudates-detection.png"
                   className="text-sm bg-principal hover:bg-principal_hover text-white uppercase px-4 py-2 rounded shadow-md transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
-                  Download Image
+                  {t('btDownloadImage')}
                 </Link>
               </div>
               <p className="text-lg text-green-400 font-semibold">{data.message}</p>
@@ -291,7 +294,7 @@ const Form = () => {
             <p className="font-semibold p-0 mb-2">Results:</p>
             <ul className="list-disc grid ml-6 gap-2">
               <li>
-                Prediction:{' '}
+              Prediction:{' '}
                 <strong>
                   {data?.prediction === 0 ? 'Melanoma' : data?.prediction === 1 ? 'Basal cell' : 'Squamous cell'}
                 </strong>

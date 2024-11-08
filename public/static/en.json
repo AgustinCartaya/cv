@@ -30,5 +30,20 @@
   "Conferences":{
     "conferences": "Conferences",
     "posters": "Posters"
+  },
+  "Programs":{
+    "btLaunch": "Launch",
+    "howToUseTheApplication": "How to Use the Application",
+    "imageRequirements": "Image Requirements",
+    "output": "Output",
+    "example": "Example",
+    "importantNotice": "Important Notice",
+    "tryTheProgram": "Try the program",
+    "btUseTestImage": "Use Test Image",
+    "btDiscard": "Discard",
+    "btSend": "Send",
+    "btDownloadImage": "Download Image",
+    "textDragDrop1": "Click to upload",
+    "textDragDrop2": "or drag and drop"
   }
 }

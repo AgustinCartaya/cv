@@ -30,5 +30,21 @@
   "Conferences": {
     "conferences": "Conférences",
     "posters": "Affiches"
+  },
+  "Programs": {
+    "btLaunch": "Lancer",
+    "howToUseTheApplication": "Comment Utiliser l'Application",
+    "imageRequirements": "Exigences d'Image",
+    "output": "Résultats",
+    "example": "Exemple",
+    "importantNotice": "Avis Important",
+    "tryTheProgram": "Essayer le programme",
+    "btUseTestImage": "Utiliser l'Image de Test",
+    "btDiscard": "Rejeter",
+    "btSend": "Envoyer",
+    "btDownloadImage": "Télécharger l'Image",
+    "textDragDrop1": "Cliquez pour télécharger",
+    "textDragDrop2": "ou faites glisser et déposez"
   }
+
 }
