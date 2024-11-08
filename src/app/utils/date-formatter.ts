@@ -1,8 +1,8 @@
 // Función para formatear una fecha en "Mes Año" (e.g., "June 2023")
-export const formatDate = (dateString: string): string => {
+export const formatDate = (dateString: string, locale: string = 'en'): string => {
   const date = new Date(dateString)
   const year = date.getUTCFullYear()
-  const month = date.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }); // Forzamos inglés
+  const month = date.toLocaleString(locale, { month: 'long', timeZone: 'UTC' }) // Forzamos inglés
   return `${month} ${year}`
 }
 
@@ -20,36 +20,49 @@ export const formatDateRange = (startDate: string, endDate: string): string => {
   return formatDate(endDate)
 }
 
-export const formatMonthYear = (dateString: string): string => {
-  const date = new Date(dateString)
-  const month = date.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }); // Forzamos inglés
+export const formatMonthYear = (dateString: string | string[], locale: string | string[] = 'en'): string => {
+  const date = new Date(Array.isArray(dateString) ? dateString[0] : dateString)
+  const localeString = Array.isArray(locale) ? locale[0] : locale
+  const month = date.toLocaleString(localeString, { month: 'long', timeZone: 'UTC' })
   const year = date.getUTCFullYear()
-  return `${month} ${year}` // Devuelve "Mes Año" en el formato requerido
+  return `${month} ${year}`
 }
 
 export const formatYear = (dateString: string): string => {
-  const date = new Date(dateString);
-  return date.getUTCFullYear().toString(); // Convierte el año en string
-};
+  const date = new Date(dateString)
+  return date.getUTCFullYear().toString() // Convierte el año en string
+}
 
-const getOrdinalSuffix = (day: number): string => {
-  if (day > 3 && day < 21) return 'th'; // 11th to 13th siempre es "th"
-  switch (day % 10) {
-    case 1: return 'st';
-    case 2: return 'nd';
-    case 3: return 'rd';
-    default: return 'th';
+const getOrdinalSuffix = (day: number, locale: string): string => {
+  if (locale === 'es' || locale === 'fr') {
+    // En español y francés, generalmente no se usan sufijos para los días
+    return ''
   }
-};
+  if (day > 3 && day < 21) return 'th' // 11th to 13th siempre es "th"
+  switch (day % 10) {
+    case 1:
+      return 'st'
+    case 2:
+      return 'nd'
+    case 3:
+      return 'rd'
+    default:
+      return 'th'
+  }
+}
 
 // Función para formatear la fecha en "12th June 2024"
-export const formatDateWithOrdinal = (dateString: string): string => {
-  const date = new Date(dateString);
-  const day = date.getUTCDate(); // Obtener el día del mes
-  const month = date.toLocaleString('en-US', { month: 'long', timeZone: 'UTC' }); // Mes en formato largo
-  const year = date.getUTCFullYear(); // Obtener el año
+export const formatDateWithOrdinal = (dateString: string | string[], locale: string | string[] = 'en'): string => {
+  const date = new Date(Array.isArray(dateString) ? dateString[0] : dateString)
+  const localeString = Array.isArray(locale) ? locale[0] : locale
+  const day = date.getUTCDate()
+  const month = date.toLocaleString(localeString, { month: 'long', timeZone: 'UTC' })
+  const year = date.getUTCFullYear()
 
-  const suffix = getOrdinalSuffix(day); // Obtener el sufijo ordinal
+  const suffix = getOrdinalSuffix(day, localeString)
+  if (locale === 'es') {
+    return `${day} de ${month} del ${year}`
+  }
 
-  return `${day}${suffix} ${month} ${year}`; // Formato: "12th June 2024"
-};
+  return `${day}${suffix} ${month} ${year}`
+}

@@ -34,9 +34,9 @@ const Card = ({ title, description, images, date, location, code, files, program
             <Location />
             {location}
           </p>
-          <p className="flex gap-2">
+          <p className="flex gap-2 capitalize">
             <Calender />
-            {formatMonthYear(date)}
+            {formatMonthYear(date, locale)}
           </p>
         </div>
         <hr className="border-gray-400" />

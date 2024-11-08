@@ -7,8 +7,10 @@ import Image from 'next/image'
 import { Calender, Location } from '@/components/Icons'
 import { MetaData } from '@/app/utils/read-meta'
 import { formatDateWithOrdinal } from '@/app/utils/date-formatter'
+import { useParams } from 'next/navigation'
 
 const Card = ({ title, description, images, date, location, files }: MetaData) => {
+  const { locale = 'en' } = useParams()
   return (
     <div className="flex flex-col gap-2 justify-between text-black bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42">
       <Image width={60} height={50} className="w-full h-60 object-cover" src={images[0]} alt={images[0]} />
@@ -18,8 +20,8 @@ const Card = ({ title, description, images, date, location, files }: MetaData) =
           <p className="flex flex-wrap gap-2 lg:flex-nowrap">
             <Location /> {location}
           </p>
-          <p className="flex flex-wrap gap-2 lg:flex-nowrap">
-            <Calender /> {formatDateWithOrdinal(date)}
+          <p className="flex flex-wrap gap-2 lg:flex-nowrap capitalize">
+            <Calender /> {formatDateWithOrdinal(date, locale)}
           </p>
         </div>
         <hr className='border-gray-400' />

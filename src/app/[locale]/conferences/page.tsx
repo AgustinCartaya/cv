@@ -1,14 +1,13 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Calender, Location } from '@/components/Icons'
 import React from 'react'
-// import conferences from '@/../public/conferences/conferences/meta.json'
 import { readMeta } from '@/app/utils/read-meta'
 import Card from './components/Card'
 import { formatDateWithOrdinal } from '@/app/utils/date-formatter'
 import { useTranslations } from 'next-intl'
 
 const Page = ({ params }: { params: { locale: string } }) => {
-    const posters = readMeta('/public/conferences/posters', params.locale).sort((a, b) => {
+  const posters = readMeta('/public/conferences/posters', params.locale).sort((a, b) => {
     const dateA = new Date(a.date || '1970-01-01')
     const dateB = new Date(b.date || '1970-01-01')
     return dateB.getTime() - dateA.getTime()
@@ -23,7 +22,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="grid my-6">
         {conferences.map((data: Conferences) => {
-          return <ConferencesCard key={uuidv4()} {...data} />
+          return <ConferencesCard key={uuidv4()} {...data} locale={params.locale} />
         })}
       </div>
 
@@ -51,15 +50,16 @@ interface Conferences {
   startDate: string
   location: string
   role: string
+  locale: string
 }
-const ConferencesCard = ({ title, startDate, location, role }: Conferences) => {
+const ConferencesCard = ({ title, startDate, location, role, locale }: Conferences) => {
   return (
     <div className="grid gap-2 p-2 text-winter dark:text-white">
       <div className="flex flex-col md:flex-row gap-4 justify-between">
         <p className="text-lg font-bold">{title}</p>
         <div className="grid sm:flex sm:flex-nowrap gap-2">
           <div className="flex gap-2">
-            <Calender /> <p>{formatDateWithOrdinal(startDate)}</p>
+            <Calender /> <p className="capitalize">{formatDateWithOrdinal(startDate, locale)}</p>
           </div>
         </div>
       </div>

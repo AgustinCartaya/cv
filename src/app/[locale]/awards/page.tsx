@@ -7,7 +7,7 @@ const Page = ({ params }: { params: { locale: string } }) => {
 
   return (
     <ul className="list-disc p-6 ml-4 grid gap-2">
-      {awards.map(award => {
+      {awards.map((award: { date: string; title: string }) => {
         return (
           <li key={uuidv4()} className="text-lg">
             {formatYear(award.date)} - {award.title}
@@ -18,4 +18,4 @@ const Page = ({ params }: { params: { locale: string } }) => {
   )
 }
 
-export default Page
+export default Page
