@@ -1,0 +1,6 @@
+[
+    { "language": "Spanish", "level": "Native", "writingPercentage": 100, "speakingPercentage": 100 },
+    { "language": "English", "level": "Fluent", "writingPercentage": 93, "speakingPercentage": 93 },
+    { "language": "French", "level": "Fluent", "writingPercentage": 93, "speakingPercentage": 93 },
+    { "language": "Italian", "level": "Basic", "writingPercentage": 60, "speakingPercentage": 80 }
+]

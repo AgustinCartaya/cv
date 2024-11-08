@@ -10,6 +10,7 @@ import { MetaData } from '@/app/utils/read-meta'
 import { Calender, Location } from '@/components/Icons'
 import { formatMonthYear } from '@/app/utils/date-formatter'
 import { useParams } from 'next/navigation'
+import { useTranslations } from 'next-intl'
 
 const Card = ({ title, description, images, date, location, code, files, program }: MetaData) => {
   const settings = {
@@ -21,6 +22,8 @@ const Card = ({ title, description, images, date, location, code, files, program
     prevArrow: <Arrow direction="prev" />,
   }
   const { locale = 'en' } = useParams()
+  const t = useTranslations('Projects')
+
   return (
     <div className="flex flex-col gap-4 justify-between bg-white shadow-lg rounded-lg overflow-hidden p-4 sm:p-8 w-42 text-black">
       <ImageSlider images={images} settings={settings} />
@@ -66,7 +69,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             key={uuidv4()}
             className="text-sm text-white bg-principal hover:bg-principal_hover uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
           >
-            Code
+            {t('btCode')}
           </Link>
         )}
         {program && (
@@ -76,7 +79,7 @@ const Card = ({ title, description, images, date, location, code, files, program
             key={uuidv4()}
             className="text-sm text-white bg-principal hover:bg-principal_hover uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
           >
-            Try!
+            {t('btTry')}
           </Link>
         )}
       </div>
