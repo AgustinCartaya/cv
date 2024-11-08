@@ -1,16 +1,15 @@
 import { v4 as uuidv4 } from 'uuid'
 import { Calender, CircularProgress, Location } from '@/components/Icons'
-// import skill_categories from '@/../public/skills/meta.json'
 import { formatDate, formatDateRange } from '../utils/date-formatter'
 import clsx from 'clsx'
 import { useTranslations } from 'next-intl'
 
-// const languages = [
-//   { language: 'Spanish', level: 'Native', writingPercentage: 100, speakingPercentage: 100 },
-//   { language: 'English', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
-//   { language: 'French', level: 'Fluent', writingPercentage: 93, speakingPercentage: 93 },
-//   { language: 'Italian', level: 'Basic', writingPercentage: 60, speakingPercentage: 80 },
-// ]
+interface Language {
+  language: string
+  level: string
+  writingPercentage: number
+  speakingPercentage: number
+}
 
 const Home = ({ params }: { params: { locale: string } }) => {
   const t = useTranslations('Home')
@@ -35,7 +34,7 @@ const Home = ({ params }: { params: { locale: string } }) => {
       <p className="text-2xl">{t('languages')}</p>
       <hr className="mt-2 mb-4 border-black dark:border-white" />
       <div className="flex flex-col sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 p-4 my-6">
-        {languages.map(({ language, level, writingPercentage, speakingPercentage }, i) => {
+        {languages.map(({ language, level, writingPercentage, speakingPercentage }: Language, i: number) => {
           const totalPercentage = (writingPercentage + speakingPercentage) / 2
           const color = i === 0 ? 'accent' : 'principal'
           return (
@@ -109,32 +108,22 @@ const Card = ({ title, association, startDate, endDate, location, description }:
   )
 }
 
+interface SkillCategory {
+  title: string
+  skills: string[]
+}
 
-// const SkillsSection = () => (
-//   <div className="grid p-4">
-//     {skill_categories.map(category => (
-//       <div key={category.title} className="mb-8">
-//         <p className="uppercase mb-4">{category.title}</p>
-//         <div className="flex flex-wrap gap-4">
-//           {category.skills.map(skill => (
-//             <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 shadow-lg">
-//               {skill}
-//             </p>
-//           ))}
-//         </div>
-//       </div>
-//     ))}
-//   </div>
-// )
+interface SkillsSectionProps {
+  skill_categories: SkillCategory[]
+}
 
-
-const SkillsSection = ({ skill_categories }) => (
+const SkillsSection: React.FC<SkillsSectionProps> = ({ skill_categories }) => (
   <div className="grid p-4">
-    {skill_categories.map((category) => (
+    {skill_categories.map(category => (
       <div key={category.title} className="mb-8">
         <p className="uppercase mb-4">{category.title}</p>
         <div className="flex flex-wrap gap-4">
-          {category.skills.map((skill) => (
+          {category.skills.map(skill => (
             <p key={skill} className="outline outline-offset-2 outline-1 rounded-lg px-6 py-2 shadow-lg">
               {skill}
             </p>
