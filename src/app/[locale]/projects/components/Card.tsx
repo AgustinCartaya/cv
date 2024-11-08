@@ -11,6 +11,7 @@ import { Calender, Location } from '@/components/Icons'
 import { formatMonthYear } from '@/app/utils/date-formatter'
 import { useParams } from 'next/navigation'
 import { useTranslations } from 'next-intl'
+import { verifyURL } from '@/app/utils/url-validation'
 
 const Card = ({ title, description, images, date, location, code, files, program }: MetaData) => {
   const settings = {
@@ -74,7 +75,7 @@ const Card = ({ title, description, images, date, location, code, files, program
         )}
         {program && (
           <Link
-            href={`/${locale}${program}`}
+            href={verifyURL(`/${locale}${program}`)}
             rel="noopener noreferrer"
             key={uuidv4()}
             className="text-sm text-white bg-principal hover:bg-principal_hover uppercase px-4 py-2 rounded shadow-md hover:bg-darkBlue transition duration-300"
