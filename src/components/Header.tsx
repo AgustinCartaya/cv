@@ -48,13 +48,13 @@ const Header = () => {
       </div>
 
       <div className="flex flex-col items-center gap-6 sm:ml-6">
+        <LocaleSwitcher />
         <button className="dark:hidden" onClick={() => setTheme('dark')}>
           <Sun />
         </button>
         <button className="hidden dark:block" onClick={() => setTheme('light')}>
           <Moon />
         </button>
-        <LocaleSwitcher />
       </div>
     </header>
   )
