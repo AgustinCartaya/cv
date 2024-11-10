@@ -1,32 +1,41 @@
+import { locales } from '@/i18n/routing'
 import { useRouter, useSearchParams, usePathname } from 'next/navigation'
+import { v4 as uuidv4 } from 'uuid'
 
+const languages = {
+  en: 'English',
+  es: 'Español',
+  fr: 'Français',
+}
 const LocaleSwitcher: React.FC = () => {
-  const router = useRouter() // Access the router
-  const pathname = usePathname() // Get the current pathname
-  const searchParams = useSearchParams() // Get the current search params
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
 
   const changeLocale = (locale: string) => {
-    // Ensure that the pathname starts with a slash and split it into segments
     const segments = pathname.split('/').filter(Boolean)
-
-    // Update the first segment to the selected locale (i.e., /es or /en)
     segments[0] = locale
-
-    // Construct the new pathname with the correct locale
     const newPathname = `/${segments.join('/')}`
-
-    // Create a new URLSearchParams object with the current search parameters
-    const newSearchParams = new URLSearchParams(searchParams.toString())
-
-    // Update the URL using router.push(), appending the search params
-    router.push(`${newPathname}?${newSearchParams.toString()}`)
+    router.replace(`${newPathname}?${searchParams.toString()}`)
   }
 
   return (
-    <div className="flex gap-2">
-      <button onClick={() => changeLocale('en')}>English</button>
-      <button onClick={() => changeLocale('es')}>Español</button>
-      <button onClick={() => changeLocale('fr')}>Français</button>
+    <div className="flex items-center gap-4">
+      {locales.map(locale => {
+        const language = languages[locale as keyof typeof languages]
+        const isMiddleLocale = locale !== locales.at(0) && locale !== locales.at(-1)
+        return (
+          <button
+            key={uuidv4()}
+            className={`relative font-semibold text-lg pr-4 ${
+              isMiddleLocale && "after:content-['']"
+            } after:absolute after:right-0 after:top-1/2 after:transform after:-translate-y-1/2 after:h-6 after:border-r after:border-gray-400 last:after:hidden`}
+            onClick={() => changeLocale(locale)}
+          >
+            {language}
+          </button>
+        )
+      })}
     </div>
   )
 }

@@ -10,16 +10,16 @@ const Header = () => {
   const t = useTranslations('Header')
 
   return (
-    <header className="flex flex-col items-center lg:flex-row gap-12 lg:gap-32 text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
-      <div>
+    <header className="flex flex-col gap-12 lg:flex-row lg:justify-between text-white bg-winter dark:bg-white dark:text-black rounded-t-lg p-8 mx-6 shadow-lg">
+      <div className='flex justify-center lg:justify-start'>
         <img
-          className="profile__image w-60 h-60 rounded-full lg:ml-6 shadow-lg"
+          className="profile__image w-60 h-60 rounded-full lg:ml-6 shadow-lg object-cover"
           src="https://avatars.githubusercontent.com/u/49463952"
           alt="profile-picture"
         />
       </div>
 
-      <div className="header__content flex flex-col justify-center gap-y-2">
+      <div className="header__content flex flex-col items-center lg:items-start justify-center gap-y-2">
         <h1 className="content__title text-3xl md:text-5xl">Agustin Cartaya</h1>
         <span className="content__profession text-lg">{t('title')}</span>
         <div className="flex gap-2">
@@ -47,7 +47,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-6 sm:ml-6">
+      <div className="flex flex-col items-center gap-6 sm:mr-6">
         <LocaleSwitcher />
         <button className="dark:hidden" onClick={() => setTheme('dark')}>
           <Sun />
