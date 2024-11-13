@@ -8,7 +8,7 @@
 
   "page": {
     "title": "Soft Exudate Detection In Retinal Fundus Images",
-    "description": "This application is designed to detect soft exudates (SEx) in retinal fundus images using image processing algorithms combined with machine learning. All the code for this project is available on my <a class='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</a>, and a detailed report can be found in the projects section of this website.",
+    "description": "This application is designed to detect soft exudates (SEx) in retinal fundus images using image processing algorithms combined with machine learning. All the code for this project is available on my <a class='underline' style='color: #1D4ED8;' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</a>, and a detailed report can be found in the projects section of this website.",
     "howToUse": [
       "Upload your fundus image in the designated area.",
       "Click <strong>Send</strong> to run the program.",

@@ -7,7 +7,7 @@
     
     "page": {
         "title": "Detección de Exudados Blandos en Imágenes de Fondo de Ojo",
-        "description": "Esta aplicación está diseñada para detectar exudados blandos (SEx) en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <a class='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</a>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
+        "description": "Esta aplicación está diseñada para detectar exudados blandos (SEx) en imágenes de fondo de ojo utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <a class='underline' style='color: #1D4ED8;' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</a>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
         "howToUse": [
             "Carga tu imagen de fondo de ojo en el área designada.",
             "Haz clic en <strong>Enviar</strong> para ejecutar el programa.",
