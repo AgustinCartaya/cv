@@ -7,7 +7,7 @@
 
     "page": {
         "title": "Detección de Melanoma en Imágenes de Dermoscopia",
-        "description": "Esta aplicación está diseñada para diferenciar melanomas malignos de lesiones cutáneas benignas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <Link className='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git'>GitHub</Link>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
+        "description": "Esta aplicación está diseñada para diferenciar melanomas malignos de lesiones cutáneas benignas en imágenes de dermoscopia utilizando algoritmos de procesamiento de imágenes combinados con aprendizaje automático. Todo el código de este proyecto está disponible en mi <a class='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git'>GitHub</a>, y un informe detallado se puede encontrar en la sección de proyectos de este sitio web.",
         "howToUse": [
             "Carga tu imagen de dermoscopia en el área designada.",
             "Haz clic en <strong>Enviar</strong> para ejecutar el programa.",

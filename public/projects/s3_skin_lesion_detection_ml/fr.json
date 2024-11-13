@@ -2,5 +2,7 @@
     "title": "Diagnostic Dermoscopique Utilisant des Techniques d'Analyse d'Images",
     "description": "Ce projet vise à développer un algorithme de diagnostic assisté par ordinateur pour les lésions cutanées sur des images dermoscopiques en utilisant des techniques d'analyse d'images. Il implique une classification binaire pour distinguer entre les lésions bénignes et les mélanomes, ainsi qu'une classification multiclasses pour le mélanome, le carcinome basocellulaire et le carcinome épidermoïde. L'algorithme génère des masques probabilistes obtenus à partir de Modèles de Mélange Gaussien et affine ces masques à l'aide de la segmentation par bassins pour améliorer la délimitation des lésions. Divers types de caractéristiques (texture, couleur, forme) sont extraits de différentes régions de l'image, et cinq classificateurs SVM faibles sont entraînés sur ces caractéristiques. Dans l'approche multiclasses, les scores de la classe minoritaire sont pondérés pour traiter le déséquilibre des classes, et les sorties des classificateurs sont combinées en utilisant la méthode de Dempster-Shafer, qui intègre les scores en valeurs de masse. Cette approche améliore la précision diagnostique en agrégeant efficacement les forces des classificateurs individuels, facilitant ainsi la détection et la classification fiables des lésions.",
     "date": "2023-12-01",
-    "location": "UdG, Girona, Espagne"
+    "location": "UdG, Girona, Espagne",
+    "code": "https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git",
+    "program": "/programs/melanoma-detection-in-dermoscopy-images"
 }

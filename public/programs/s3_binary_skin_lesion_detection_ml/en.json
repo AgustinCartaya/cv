@@ -8,7 +8,7 @@
   "page":
   {
       "title":"Melanoma Detection In Dermoscopy Images",
-      "description":"This application is designed to differentiate between malignant melanomas and benign skin lesions in dermoscopy images using image processing algorithms combined with machine learning. All the code for this project is available on my <Link className='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git' > GitHub </Link> , and a detailed report can be found in the projects section of this website.",
+      "description":"This application is designed to differentiate between malignant melanomas and benign skin lesions in dermoscopy images using image processing algorithms combined with machine learning. All the code for this project is available on my <a class='underline text-blue-700' target='_blank' href='https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git'>GitHub</a>, and a detailed report can be found in the projects section of this website.",
       "howToUse":["Upload your dermoscopy image in the designated area.",
         "Click <strong>Send</strong> to run the program.",
         "Wait for the result image (the analysis may take a few minutes)."],

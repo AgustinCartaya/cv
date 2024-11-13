@@ -2,5 +2,7 @@
     "title": "Diagnóstico Dermatoscópico Usando Técnicas de Análisis de Imágenes",
     "description": "Este proyecto tiene como objetivo desarrollar un algoritmo de diagnóstico asistido por computadora para lesiones cutáneas en imágenes dermatoscópicas utilizando técnicas de análisis de imágenes. Involucra clasificación binaria para distinguir entre lesiones benignas y melanomas, así como clasificación multicategoría para melanoma, carcinoma basocelular y carcinoma espinocelular. El algoritmo genera máscaras probabilísticas obtenidas de Modelos de Mezcla Gaussiana y refina estas máscaras usando segmentación por cuencas para mejorar la delimitación de las lesiones. Se extraen varios tipos de características (textura, color, forma) de diferentes regiones de la imagen, y se entrenan cinco clasificadores SVM débiles sobre estas características. En el enfoque multicategoría, los puntajes de las clases minoritarias se ponderan para abordar el desequilibrio de clases, y las salidas de los clasificadores se combinan utilizando el método de Dempster-Shafer, que integra los puntajes en valores de masa. Este enfoque mejora la precisión diagnóstica al agregar eficazmente las fortalezas de los clasificadores individuales, facilitando la detección y clasificación confiables de las lesiones.",
     "date": "2023-12-01",
-    "location": "UdG, Girona, España"
+    "location": "UdG, Girona, España",
+    "code": "https://github.com/AgustinCartaya/s3-binary-skin-lesion-detection-ml.git",
+    "program": "/programs/melanoma-detection-in-dermoscopy-images"
 }
