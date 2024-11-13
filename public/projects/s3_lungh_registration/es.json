@@ -1,0 +1,6 @@
+{
+    "title": "Registro de Imágenes de Volúmenes de Tomografía Computarizada de Tórax",
+    "description": "Este proyecto compara métodos de registro de imágenes para escaneos de tomografía computarizada 4D de los pulmones durante la inhalación y exhalación. Se contrasta el enfoque tradicional afín y BSpline de Elastix con el algoritmo de deep learning de VoxelMorph, logrando un Error Promedio de Registro de Objetivo de 4.12mm. El estudio tiene como objetivo mejorar la precisión de alineación para el diagnóstico y tratamiento de la Enfermedad Pulmonar Obstructiva Crónica.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, España"
+}

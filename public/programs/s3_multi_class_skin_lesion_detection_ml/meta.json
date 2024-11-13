@@ -1,7 +1,0 @@
-
-{
-    "url": "classification-of-malignant-skin-lesions",
-    "title":"Classification of Malignant Skin Lesions",
-    "description": "This application is designed to differentiate between melanomas, Basal Cells and Squamous cell in dermoscopy images using image processing algorithms combined with machine learning. Upload your dermoscopy image to classify the skin lesion as benign or malignant. <strong>Attention! This application is not validated for medical use and was created solely for academic purposes.</strong>"
-}
-

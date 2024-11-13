@@ -1,0 +1,6 @@
+{
+    "title": "Detección de Tumores Cerebrales Usando la Combinación de Dempster-Shafer",
+    "description": "Este proyecto se centra en la segmentación de tumores cerebrales a partir de imágenes de MRI. El método propuesto integra datos de múltiples modalidades de MRI—T1, T2, FLAIR y ADC—utilizando la teoría de Dempster-Shafer para lograr la segmentación 3D del tumor. En este enfoque, cada modalidad genera mapas 3D donde a cada voxel se le asigna una probabilidad entre 0 y 1, indicando la probabilidad de ser parte de un tumor. Estas probabilidades se combinan luego usando la regla de Dempster, resultando en una imagen final con mayor certeza sobre la presencia del tumor. El método se aplicó a imágenes 3D de pacientes con glioma de la base de datos UCSF-PDGM.",
+    "date": "2023-09-01",
+    "location": "ImViA, Dijon Francia"
+}

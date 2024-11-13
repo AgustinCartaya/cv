@@ -1,0 +1,34 @@
+{
+
+    "url": "soft-exudates-detection",
+    "card": {
+        "title": "Détection des Exsudats Mous dans les Images de Fond de Yeux",
+        "description": "Cette application est conçue pour détecter les exsudats mous dans les images de fond de l'œil en utilisant des algorithmes de traitement d'images combinés avec l'apprentissage automatique. Téléchargez votre image de fond de l'œil pour détecter les exsudats mous. <strong>Attention! Cette application n'est pas validée pour un usage médical et a été créée uniquement à des fins académiques.</strong>"
+    },
+    
+    "page": {
+        "title": "Détection des Exsudats Mous dans les Images de Fond de Yeux",
+        "description": "Cette application est conçue pour détecter les exsudats mous (SEx) dans les images de fond de l'œil en utilisant des algorithmes de traitement d'images combinés avec l'apprentissage automatique. Tout le code de ce projet est disponible sur mon <a class='underline' style='color: #1D4ED8;' target='_blank' href='https://github.com/AgustinCartaya/s2-soft-exudates-detection-in-fundus-images.git'>GitHub</a>, et un rapport détaillé peut être trouvé dans la section des projets de ce site Web.",
+        "howToUse": [
+            "Téléchargez votre image de fond de l'œil dans la zone désignée.",
+            "Cliquez sur <strong>Envoyer</strong> pour exécuter le programme.",
+            "Attendez l'image de résultat (l'analyse peut prendre quelques minutes)."
+        ],
+        "howToUseTestImage": "Vous pouvez également utiliser l'image de test fournie pour voir comment fonctionne l'application en sélectionnant <strong>Utiliser l'image de test</strong>.",
+        "requirements": [
+            "L'image doit être une image de fond de l'œil, centrée sur l'œil avec un fond noir.",
+            "Elle ne doit pas contenir de segmentations ou annotations précédentes.",
+            "L'image doit être en couleur.",
+            "Résolution minimale : 1500 x 1500 pixels."
+        ],
+        "output": [
+            "Candidats initiaux identifiés par un algorithme de base, entourés en blanc.",
+            "Candidats suspects de SEx entourés en bleu.",
+            "Le disque optique entouré en noir.",
+            "Nombre de candidats identifiés par un algorithme de base.",
+            "Nombre de candidats suspects de SEx."
+        ],
+        "example": "<Image width={600} height={100} className='rounded-md lg:rounded-l-lg' src={'/programs/s2_soft_exudates_detection_in_fundus_images/images/sex_detection_program_2.png'} alt={'sex_detection_program.png'}/>",
+        "notice": "Cette application est destinée uniquement à des fins académiques et n'est pas validée pour un usage médical par des professionnels. Les résultats peuvent ne pas être entièrement précis, car l'algorithme est encore en développement."
+    }
+}

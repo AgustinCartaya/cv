@@ -1,0 +1,6 @@
+{
+    "title": "Application pour lésions cutanées – Projet FORTHEM",
+    "description": "Développement d'une application logicielle pour aider à l'analyse des lésions dermatologiques en intégrant des images multimodales et des diagnostics assistés par IA. L'outil organise et suit les images de différentes modalités, telles que la dermoscopie, la microscopie confocale réflectante et la photographie, offrant une vue d'ensemble des lésions cutanées. Il prend en charge plusieurs systèmes d'IA, en utilisant à la fois les données des patients et les caractéristiques des lésions pour améliorer la précision diagnostique. Les fonctionnalités clés incluent la possibilité d'ajouter de nouveaux types d'images, de filtrer les patients par données de lésions et de visualiser la progression des lésions dans le temps. Ce logiciel soutient les dermatologues dans la gestion des images et l'amélioration des diagnostics, en particulier pour la détection précoce du cancer de la peau.",
+    "date": "2022-07-01",
+    "location": "ImViA, Dijon France"
+}

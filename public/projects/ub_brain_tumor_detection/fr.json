@@ -1,0 +1,6 @@
+{
+    "title": "Détection de Tumeurs Cérébrales Utilisant la Combinaison de Dempster-Shafer",
+    "description": "Ce projet se concentre sur la segmentation des tumeurs cérébrales à partir d'images IRM. La méthode proposée intègre des données de plusieurs modalités IRM—T1, T2, FLAIR et ADC—en utilisant la théorie de Dempster-Shafer pour obtenir une segmentation 3D de la tumeur. Dans cette approche, chaque modalité génère des cartes 3D où chaque voxel se voit attribuer une probabilité entre 0 et 1, indiquant la probabilité d'appartenir à une tumeur. Ces probabilités sont ensuite combinées à l'aide de la règle de Dempster, ce qui donne une image finale avec une certitude accrue quant à la présence de la tumeur. La méthode a été appliquée aux images 3D de patients atteints de gliome de la base de données UCSF-PDGM.",
+    "date": "2023-09-01",
+    "location": "ImViA, Dijon France"
+}

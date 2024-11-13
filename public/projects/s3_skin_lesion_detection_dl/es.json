@@ -1,0 +1,6 @@
+{
+    "title": "Diagnóstico Dermatoscópico Usando Deep Learning",
+    "description": "Este proyecto se centra en la detección de lesiones cutáneas utilizando arquitecturas de deep learning. Se abordaron dos tareas principales: clasificación binaria para distinguir entre lesiones benignas y melanomas, y clasificación multicategoría para diferenciar entre melanoma, carcinoma basocelular y carcinoma espinocelular. Implementamos dos funciones de pérdida innovadoras: Mask Loss, basada en el coeficiente de correlación de Pearson entre la máscara real y los Mapas de Activación de Clases (CAMs), y Center Loss, que utiliza la distancia euclidiana entre las características de la imagen y los centros de clase. Estas funciones mejoran la discriminación de características entre clases mientras minimizan la varianza intra-clase.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, España"
+}

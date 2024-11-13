@@ -1,0 +1,6 @@
+{
+    "title": "Enregistrement d'Images de Volumes de Tomodensitométrie du Thorax",
+    "description": "Ce projet compare les méthodes d'enregistrement d'images pour les scans CT 4D des poumons pendant l'inhalation et l'exhalation. Il contraste les approches traditionnelles affines et BSpline d'Elastix avec l'algorithme de deep learning de VoxelMorph, atteignant une erreur moyenne d'enregistrement de cible de 4,12 mm. L'étude vise à améliorer la précision de l'alignement pour le diagnostic et le traitement de la Maladie Pulmonaire Obstructive Chronique.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, Espagne"
+}

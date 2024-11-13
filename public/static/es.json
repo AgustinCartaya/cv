@@ -1,0 +1,50 @@
+{
+  "Home": {
+    "aboutMe": "Sobre mí",
+    "aboutMeDescription": "Me especializo en el análisis de imágenes médicas, desarrollando una amplia gama de algoritmos, incluidos métodos de aprendizaje automático y aprendizaje profundo, para extraer características, segmentar, clasificar y analizar datos médicos. Tengo un interés particular en el análisis de datos cerebrales y en contribuir a una comprensión más profunda de las funciones complejas del cerebro humano, como la memoria y el comportamiento.",
+    "academicBackground": "Estudios",
+    "languages": "Idiomas",
+    "languagesWriting": "Escrito",
+    "languagesSpeaking": "Hablado",
+    "skills": "Habilidades"
+  },
+  "Navigation": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "publications": "Publicaciones",
+    "awards": "Premios",
+    "conferences": "Conferencias",
+    "programs": "Programas"
+  },
+  "Header": {
+    "title": "Estudiante de Maestría en Imágenes Médicas"
+  },
+  "Projects": {
+    "btCode": "Código",
+    "btTry": "Probar"
+  },
+  "Publications": {
+    "linkToDownload": "Enlace para descargar",
+    "abstract": "Resumen"
+  },
+  "Conferences": {
+    "conferences": "Conferencias",
+    "posters": "Pósters"
+  },
+  "Programs": {
+    "btLaunch": "Lanzar",
+    "howToUseTheApplication": "Cómo Usar la Aplicación",
+    "imageRequirements": "Requisitos de Imagen",
+    "output": "Resultados",
+    "example": "Ejemplo",
+    "importantNotice": "Aviso Importante",
+    "tryTheProgram": "Probar el programa",
+    "btUseTestImage": "Usar Imagen de Prueba",
+    "btDiscard": "Descartar",
+    "btSend": "Enviar",
+    "btDownloadImage": "Descargar Imagen",
+    "textDragDrop1": "Haz clic para cargar",
+    "textDragDrop2": "o arrastra y suelta"
+  }
+
+}

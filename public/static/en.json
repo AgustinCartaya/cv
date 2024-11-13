@@ -1,0 +1,49 @@
+{
+  "Home": {
+    "aboutMe": "About Me",
+    "aboutMeDescription": "I specialize in medical image analysis, developing a wide range of algorithms, including machine learning and deep learning methods, to extract features, segment, classify, and analyze medical data. I have a particular interest in brain data analysis and in contributing to a deeper understanding of complex human brain functions, such as memory and behavior.",
+    "academicBackground": "Academic Background",
+    "languages": "Languages",
+    "languagesWriting": "Writing",
+    "languagesSpeaking": "Speaking",
+    "skills": "Skills"
+  },
+  "Navigation": {
+    "home": "Home",
+    "projects": "Projects",
+    "publications": "Publications",
+    "awards": "Awards",
+    "conferences": "Conferences",
+    "programs": "Programs"
+  },
+  "Header": {
+    "title": "MSc Student in Medical Imaging"
+  },
+  "Projects":{
+    "btCode": "Code",
+    "btTry": "Try"
+  },
+  "Publications":{
+    "linkToDownload": "Link to download",
+    "abstract": "Abstract"
+  },
+  "Conferences":{
+    "conferences": "Conferences",
+    "posters": "Posters"
+  },
+  "Programs":{
+    "btLaunch": "Launch",
+    "howToUseTheApplication": "How to Use the Application",
+    "imageRequirements": "Image Requirements",
+    "output": "Output",
+    "example": "Example",
+    "importantNotice": "Important Notice",
+    "tryTheProgram": "Try the program",
+    "btUseTestImage": "Use Test Image",
+    "btDiscard": "Discard",
+    "btSend": "Send",
+    "btDownloadImage": "Download Image",
+    "textDragDrop1": "Click to upload",
+    "textDragDrop2": "or drag and drop"
+  }
+}

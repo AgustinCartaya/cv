@@ -1,0 +1,6 @@
+{
+    "title": "Segmentación de Tejidos Cerebrales con Atlas Híbrido y Cascada U-NET",
+    "description": "Este proyecto tiene como objetivo desarrollar un método basado en IA para segmentar los tres principales tejidos cerebrales: materia blanca (WM), materia gris (GM) y líquido cefalorraquídeo (LCR), utilizando imágenes por resonancia magnética (IRM). El enfoque integra un atlas probabilístico como información espacial previa en un modelo de deep learning para lograr una segmentación precisa.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, España"
+}

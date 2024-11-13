@@ -1,0 +1,6 @@
+{
+    "title": "NeuroSculpt : Prévision de la Structure Cérébrale 9 Ans à l'Avance à l'Aide d'une IRM Structurelle",
+    "description": "Cette thèse de maîtrise se concentre sur la prévision des changements structurels du cerveau sur une période de neuf ans dans une population adulte en bonne santé en utilisant des images IRM pondérées en T1 en 3D. La détection précoce des changements cérébraux est cruciale pour prévenir les maladies neurodégénératives telles que la démence et la maladie de Parkinson. La thèse explore deux méthodes : les Champs de Déformation (DFs) et les techniques d'apprentissage profond basées sur les Réseaux Antagonistes Génératifs (GANs). Les résultats ont montré que les techniques basées sur DF étaient plus efficaces et stables, capturant des changements subtils dans le thalamus et le cortex, ainsi que des changements significatifs dans les ventricules. En revanche, les GANs ont principalement prédit des changements volumétriques dans les ventricules. Cette recherche fournit une base pour des études futures, mettant en avant le potentiel des approches basées sur DF et suggérant des améliorations pour les méthodes GAN.",
+    "date": "2024-06-26",
+    "location": "NTNU, Trondheim, Norvège"
+}

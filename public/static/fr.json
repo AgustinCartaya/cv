@@ -1,0 +1,50 @@
+{
+  "Home": {
+    "aboutMe": "À propos de moi",
+    "aboutMeDescription": "Je me spécialise dans l'analyse d'images médicales, développant une large gamme d'algorithmes, y compris des méthodes d'apprentissage automatique et d'apprentissage profond, pour extraire des caractéristiques, segmenter, classifier et analyser des données médicales. J'ai un intérêt particulier pour l'analyse des données cérébrales et pour contribuer à une compréhension plus approfondie des fonctions complexes du cerveau humain, telles que la mémoire et le comportement.",
+    "academicBackground": "Parcours Académique",
+    "languages": "Langues",
+    "languagesWriting": "À l'écrit",
+    "languagesSpeaking": "À l'orale",
+    "skills": "Compétences"
+  },
+  "Navigation": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "publications": "Publications",
+    "awards": "Distinctions",
+    "conferences": "Conférences",
+    "programs": "Programmes"
+  },
+  "Header": {
+    "title": "Étudiant en MSc en Imagerie Médicale"
+  },
+  "Projects": {
+    "btCode": "Code",
+    "btTry": "Essayer"
+  },
+  "Publications": {
+    "linkToDownload": "Lien de téléchargement",
+    "abstract": "Résumé"
+  },
+  "Conferences": {
+    "conferences": "Conférences",
+    "posters": "Affiches"
+  },
+  "Programs": {
+    "btLaunch": "Lancer",
+    "howToUseTheApplication": "Comment Utiliser l'Application",
+    "imageRequirements": "Exigences d'Image",
+    "output": "Résultats",
+    "example": "Exemple",
+    "importantNotice": "Avis Important",
+    "tryTheProgram": "Essayer le programme",
+    "btUseTestImage": "Utiliser l'Image de Test",
+    "btDiscard": "Rejeter",
+    "btSend": "Envoyer",
+    "btDownloadImage": "Télécharger l'Image",
+    "textDragDrop1": "Cliquez pour télécharger",
+    "textDragDrop2": "ou faites glisser et déposez"
+  }
+
+}

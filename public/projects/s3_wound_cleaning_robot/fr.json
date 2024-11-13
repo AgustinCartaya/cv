@@ -1,0 +1,6 @@
+{
+    "title": "WoundCareBot",
+    "description": "L'objectif de ce projet est de développer 'WoundCareBot', un système robotique conçu pour automatiser le nettoyage précis des plaies. En utilisant un Robot Universel avec 6 degrés de liberté, le système effectue quatre mouvements clés en fonction du type de plaie : linéaire, circulaire, circulaire-poussée et circulaire-extérieur. Ces mouvements sont adaptés aux différents besoins de nettoyage des plaies, comme les plaies chirurgicales, les brûlures et les ulcères du pied diabétique, garantissant qu'une force appropriée soit appliquée pour réduire le risque d'infection et favoriser la guérison. WoundCareBot vise à améliorer l'efficacité et la précision dans les soins des plaies, améliorant ainsi les résultats des patients dans les environnements médicaux.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, Espagne"
+}

@@ -1,0 +1,6 @@
+{
+    "title": "WoundCareBot",
+    "description": "El objetivo de este proyecto es desarrollar 'WoundCareBot', un sistema robótico diseñado para automatizar la limpieza precisa de heridas. Usando un Robot Universal con 6 grados de libertad, el sistema realiza cuatro movimientos clave según el tipo de herida: lineales, circulares, circular-empuje y circular-exterior. Estos movimientos están adaptados a las diferentes necesidades de limpieza de heridas, como heridas quirúrgicas, quemaduras y úlceras en los pies diabéticos, asegurando que se aplique la fuerza adecuada para reducir el riesgo de infección y promover la curación. WoundCareBot tiene como objetivo mejorar la eficiencia y la precisión en el cuidado de las heridas, mejorando los resultados de los pacientes en entornos médicos.",
+    "date": "2024-01-01",
+    "location": "UdG, Girona, España"
+}

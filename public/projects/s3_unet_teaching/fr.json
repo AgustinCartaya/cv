@@ -1,0 +1,6 @@
+{
+    "title": "Façon Amusante de Comprendre l'Architecture U-Net",
+    "description": "Ce projet propose une approche interactive et engageante pour enseigner les composants de U-Net à travers un jeu sur le thème des détectives. Les participants enquêtent sur les causes des mauvais résultats de segmentation pour le Dr. Luna, une scientifique des données, en explorant l'architecture de U-Net pour identifier ses composants clés. Cette expérience pratique améliore la compréhension tout en mettant en évidence l'importance réelle d'améliorer la segmentation en imagerie médicale. Ce rapport décrit les étapes suivies pour développer le projet et recueillir les retours des participants.",
+    "date": "2023-12-01",
+    "location": "UdG, Girona, Espagne"
+}

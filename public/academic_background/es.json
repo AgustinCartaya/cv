@@ -1,0 +1,29 @@
+[
+    {
+      "title": "Máster en Imágenes Médicas y Aplicaciones",
+      "association": "Máster Conjunto Erasmus Mundus MAIA",
+      "startDate": "2022-07-06",
+      "endDate": "2024-06-27",
+      "location": "uB – Francia; UdG – España; UNICAS – Italia; NTNU – Noruega",
+      "description": "Especializado en análisis de imágenes médicas y sistemas CAD utilizando algoritmos avanzados de aprendizaje automático y aprendizaje profundo."
+    },
+    
+    {
+      "title": "Licenciatura en Ciencias de la Computación",
+      "association": "Universidad de Borgoña",
+      "startDate": "2019-07-12",
+      "endDate": "2022-06-01",
+      "location": "Dijon, Francia",
+      "description": "Especializado en procesamiento de imágenes y síntesis de imágenes."
+    },
+    
+    {
+      "title": "Ingeniería Electrónica (5 semestres)",
+      "association": "UNEXPO",
+      "startDate": "2017-11-01",
+      "endDate": "2019-09-01",
+      "location": "Guayana, Venezuela",
+      "description": ""
+    }
+  ]
+  
