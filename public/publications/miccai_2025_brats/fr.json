@@ -1,0 +1,7 @@
+
+{
+    "title":"Synthèse par Ensemble dans l'Espace Latent des Modalités IRM Manquantes pour les Tumeurs Cérébrales – BraTS Challenge",
+    "description": "L'absence de certaines modalités IRM est un défi fréquent en imagerie clinique des tumeurs cérébrales, ce qui limite l'efficacité des modèles de segmentation multimodaux. Dans ce travail, nous proposons une approche ensembliste pour synthétiser les modalités IRM manquantes à partir de celles disponibles. Elle combine un encodeur-décodeur de translation de modalités et un modèle de diffusion de pont brownien pour la translation de modalités, tous deux opérant dans un espace latent compact généré par un réseau de compression volumétrique pré-entraîné. Cette conception permet une synthèse 3D du volume entier avec des besoins computationnels modérés et une cohérence anatomique améliorée. Chaque modèle est entraîné et validé sur l'ensemble de données BraSyn 2025, et leurs sorties sont fusionnées pour accroître la robustesse face aux variabilités structurelles et de contraste. L'évaluation sur l'ensemble de validation montre que les images synthétiques produites par notre ensemble ressemblent étroitement aux modalités manquantes originales et, lorsqu'elles sont combinées avec celles disponibles, soutiennent une segmentation efficace des tumeurs, démontrant ainsi l'efficacité de la méthode pour la complétion des données cliniques.",
+    "date": "2026-04-01",
+    "link": "https://link.springer.com/chapter/10.1007/978-3-032-16370-7_3"
+}
