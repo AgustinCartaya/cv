@@ -1,0 +1,8 @@
+
+{
+    "title":"Síntesis por Conjunto en el Espacio Latente de Modalidades de RM Faltantes para Tumores Cerebrales – Desafío BraTS",
+    "description": "La ausencia de ciertas modalidades de RM es un desafío frecuente en la imagenología clínica de tumores cerebrales, lo que limita la eficacia de los modelos de segmentación multimodal. En este trabajo, proponemos un enfoque basado en conjuntos para sintetizar las modalidades de RM faltantes a partir de las disponibles. Este enfoque combina un codificador-decodificador de traducción de modalidades y un modelo de difusión de puente browniano para la traducción de modalidades, ambos operando en un espacio latente compacto generado por una red de compresión volumétrica preentrenada. Este diseño permite la síntesis 3D del volumen completo con demandas computacionales moderadas y una coherencia anatómica mejorada. Cada modelo es entrenado y validado en el conjunto de datos BraSyn 2025, y sus salidas son fusionadas para aumentar la robustez frente a las variabilidades estructurales y de contraste. La evaluación en el conjunto de validación muestra que las imágenes sintéticas producidas por nuestro conjunto se parecen estrechamente a las modalidades faltantes originales y, cuando son combinadas con las disponibles, apoyan una segmentación eficaz de los tumores, demostrando así la efectividad del método para la completación de datos clínicos.",
+    "date": "2026-04-01",
+    "link": "https://link.springer.com/chapter/10.1007/978-3-032-16370-7_3"
+}
+
