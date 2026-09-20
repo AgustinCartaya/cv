@@ -1,10 +1,34 @@
 [
     {
+        "title":"MICCAI 2026",
+        "startDate":"2026-09-27",
+        "endDate":"2026-10-01",
+        "location": "Strasbourg, France",
+        "role": "Poster presenter (MRIxFields challenge)",
+        "link": "https://conferences.miccai.org/2026/en/default.asp"
+    },
+    {
+        "title":"IABM 2026",
+        "startDate":"2026-03-09",
+        "endDate":"2026-03-11",
+        "location": "Lyon, France",
+        "role": "Poster presenter",
+        "link": "https://iabm2026.sciencesconf.org/?lang=en"
+    },
+    {
+        "title":"MICCAI 2025",
+        "startDate":"2025-09-23",
+        "endDate":"2025-09-27",
+        "location": "Daejeon, South Korea",
+        "role": "Oral presentation (BraTS challenge)",
+        "link": "https://conferences.miccai.org/2025/en/"
+    },
+    {
         "title":"MAIA Day 2024",
         "startDate":"2024-06-27",
         "endDate":"2024-06-27",
         "location": "Gaeta, Italy",
-        "role": "Speaker, Poster presenter",
+        "role": "Speaker; Poster presenter",
         "link": "https://maiamaster.udg.edu/maia-day/"
     },
     
