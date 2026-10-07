@@ -1,7 +1,7 @@
 {
   "Home": {
     "aboutMe": "About Me",
-    "aboutMeDescription": "I specialize in medical image analysis, developing a wide range of algorithms, including machine learning and deep learning methods, to extract features, segment, classify, and analyze medical data. I have a particular interest in brain data analysis and in contributing to a deeper understanding of complex human brain functions, such as memory and behavior.",
+    "aboutMeDescription": "I specialize in medical image analysis and artificial intelligence, with a particular focus on brain MRI and the development of deep learning methods for brain data processing. My research explores generative models for medical image synthesis, structural brain analysis, and longitudinal modelling, with the aim of characterizing and understanding changes in the human brain across individuals and over time. More broadly, I am interested in developing computational methods that can contribute to a better understanding of brain structure, cognition, and behavior.",
     "academicBackground": "Academic Background",
     "languages": "Languages",
     "languagesWriting": "Writing",
@@ -17,7 +17,7 @@
     "programs": "Programs"
   },
   "Header": {
-    "title": "MSc Student in Medical Imaging"
+    "title": "PhD Student in Medical Image Analysis and Artificial Intelligence"
   },
   "Projects":{
     "btCode": "Code",

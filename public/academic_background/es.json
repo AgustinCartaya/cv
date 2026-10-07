@@ -1,5 +1,14 @@
 [
     {
+      "title": "Doctorado en aprendizaje profundo para la síntesis y el análisis de imágenes cerebrales",
+      "association": "Grupo de investigación VICOROB",
+      "startDate": "2025-02-01",
+      "endDate": "Actualidad",
+      "location": "Universidad de Girona – España",
+      "description": "Investigación sobre RM cerebral mediante aprendizaje profundo y modelos generativos para la síntesis de imágenes, el modelado estructural y el análisis longitudinal."
+    },
+    
+    {
       "title": "Máster en Imágenes Médicas y Aplicaciones",
       "association": "Máster Conjunto Erasmus Mundus MAIA",
       "startDate": "2022-07-06",
