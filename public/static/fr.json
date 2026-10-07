@@ -1,8 +1,7 @@
 {
   "Home": {
     "aboutMe": "À propos de moi",
-    "aboutMeDescription": "Je me spécialise dans l'analyse d'images médicales, développant une large gamme d'algorithmes, y compris des méthodes d'apprentissage automatique et d'apprentissage profond, pour extraire des caractéristiques, segmenter, classifier et analyser des données médicales. J'ai un intérêt particulier pour l'analyse des données cérébrales et pour contribuer à une compréhension plus approfondie des fonctions complexes du cerveau humain, telles que la mémoire et le comportement.",
-    "academicBackground": "Parcours Académique",
+    "aboutMeDescription": "Je me spécialise dans l'analyse d'images médicales et l'intelligence artificielle, avec un intérêt particulier pour l'IRM cérébrale et le développement de méthodes d'apprentissage profond pour le traitement des données cérébrales. Mes recherches portent sur les modèles génératifs pour la synthèse d'images médicales, l'analyse structurelle du cerveau et la modélisation longitudinale, dans le but de caractériser et de comprendre les changements du cerveau humain d'un individu à l'autre et au fil du temps. Plus largement, je m'intéresse au développement de méthodes computationnelles susceptibles de contribuer à une meilleure compréhension de la structure cérébrale, de la cognition et du comportement.",    "academicBackground": "Parcours Académique",
     "languages": "Langues",
     "languagesWriting": "À l'écrit",
     "languagesSpeaking": "À l'orale",
@@ -17,7 +16,7 @@
     "programs": "Programmes"
   },
   "Header": {
-    "title": "Étudiant en MSc en Imagerie Médicale"
+    "title": "Doctorant en analyse d'images médicales et intelligence artificielle"
   },
   "Projects": {
     "btCode": "Code",
